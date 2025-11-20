@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Services Overview - Medilab Healthcare</title>
+  <meta name="description" content="Learn about Medilab's comprehensive healthcare services, specialized departments, and our commitment to patient-centered care.">
+  <meta name="keywords" content="healthcare services, medical departments, patient care, healthcare providers">
+  {% load static %}
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Medilab
+  * Template URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="starter-page-page">
+
+  <header id="header" class="header sticky-top">
+
+    <div class="topbar d-flex align-items-center">
+      <div class="container d-flex justify-content-center justify-content-md-between">
+        <div class="contact-info d-flex align-items-center">
+          <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@medilab.com">contact@medilab.com</a></i>
+          <i class="bi bi-phone d-flex align-items-center ms-4"><span>+1 5589 55488 55</span></i>
+        </div>
+        <div class="social-links d-none d-md-flex align-items-center">
+          <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+    </div><!-- End Top Bar -->
+
+    <div class="branding d-flex align-items-center">
+
+      <div class="container position-relative d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center me-auto">
+          <!-- Uncomment the line below if you also wish to use an image logo -->
+          <!-- <img src="{% static 'assets/img/logo.png' %}" alt=""> -->
+          <h1 class="sitename">Medilab</h1>
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html">Home<br></a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#departments">Departments</a></li>
+            <li><a href="#doctors">Doctors</a></li>
+            <li class="dropdown"><a href="#"><span>Resources</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <ul>
+                <li><a href="health-tips.html">Health Tips</a></li>
+                <li class="dropdown"><a href="#"><span>Patient Resources</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                  <ul>
+                    <li><a href="patient-forms.html">Patient Forms</a></li>
+                    <li><a href="insurance-info.html">Insurance Information</a></li>
+                    <li><a href="billing-payments.html">Billing & Payments</a></li>
+                    <li><a href="medical-records.html">Medical Records</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                  </ul>
+                </li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="careers.html">Careers</a></li>
+              </ul>
+            </li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+
+        <a class="cta-btn d-none d-sm-block" href="#appointment">Make an Appointment</a>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title" data-aos="fade">
+      <div class="heading">
+        <div class="container">
+          <div class="row d-flex justify-content-center text-center">
+            <div class="col-lg-8">
+              <h1>Our Healthcare Services</h1>
+              <p class="mb-0">Discover Medilab's comprehensive range of medical services designed to meet all your healthcare needs with excellence, compassion, and cutting-edge technology.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav class="breadcrumbs">
+        <div class="container">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Services Overview</li>
+          </ol>
+        </div>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <!-- Services Overview Section -->
+    <section id="services-overview" class="services-overview section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Comprehensive Medical Care</h2>
+        <p>At Medilab, we offer a complete spectrum of healthcare services delivered by experienced professionals using the latest medical technology</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up">
+        
+        <div class="row gy-5">
+          
+          <div class="col-lg-6">
+            <div class="service-feature">
+              <div class="feature-icon">
+                <i class="fas fa-heartbeat"></i>
+              </div>
+              <div class="feature-content">
+                <h3>Specialized Medical Departments</h3>
+                <p>Our facility houses specialized departments including Cardiology, Neurology, Orthopedics, Pediatrics, and Dermatology, each staffed with board-certified specialists and equipped with state-of-the-art diagnostic and treatment technology.</p>
+                <ul>
+                  <li><strong>Cardiology:</strong> Advanced heart care with non-invasive diagnostics and interventional procedures</li>
+                  <li><strong>Neurology:</strong> Comprehensive care for brain and nervous system disorders</li>
+                  <li><strong>Orthopedics:</strong> Joint replacement, sports medicine, and musculoskeletal care</li>
+                  <li><strong>Pediatrics:</strong> Child-focused healthcare from infancy through adolescence</li>
+                  <li><strong>Dermatology:</strong> Medical and cosmetic skin treatments</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-6">
+            <div class="service-feature">
+              <div class="feature-icon">
+                <i class="fas fa-user-md"></i>
+              </div>
+              <div class="feature-content">
+                <h3>Expert Medical Team</h3>
+                <p>Our healthcare professionals include experienced physicians, surgeons, nurses, and support staff dedicated to providing personalized care. Each team member undergoes continuous training to stay current with medical advancements.</p>
+                <ul>
+                  <li>Board-certified physicians in multiple specialties</li>
+                  <li>Nursing staff with specialized training</li>
+                  <li>Collaborative approach to patient care</li>
+                  <li>Multidisciplinary case reviews</li>
+                  <li>Patient education and support services</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-6">
+            <div class="service-feature">
+              <div class="feature-icon">
+                <i class="fas fa-clinic-medical"></i>
+              </div>
+              <div class="feature-content">
+                <h3>Diagnostic Services</h3>
+                <p>We provide comprehensive diagnostic services to ensure accurate and timely diagnosis of medical conditions. Our advanced imaging and laboratory facilities support our physicians in developing effective treatment plans.</p>
+                <ul>
+                  <li>Digital X-ray and CT scanning</li>
+                  <li>MRI and ultrasound imaging</li>
+                  <li>Comprehensive laboratory testing</li>
+                  <li>Cardiac stress testing and echocardiography</li>
+                  <li>Endoscopy and colonoscopy services</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-6">
+            <div class="service-feature">
+              <div class="feature-icon">
+                <i class="fas fa-procedures"></i>
+              </div>
+              <div class="feature-content">
+                <h3>Surgical Services</h3>
+                <p>Our modern surgical suites support a wide range of procedures from minimally invasive surgeries to complex operations. We prioritize patient safety and optimal outcomes through advanced technology and skilled surgical teams.</p>
+                <ul>
+                  <li>Minimally invasive procedures</li>
+                  <li>Robotic-assisted surgery</li>
+                  <li>Outpatient and inpatient surgical care</li>
+                  <li>Advanced anesthesia services</li>
+                  <li>Post-operative recovery and rehabilitation</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        
+        <div class="row mt-5" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-12">
+            <div class="additional-info">
+              <h3>Patient-Centered Approach</h3>
+              <p>At Medilab, we believe in treating the whole person, not just the symptoms. Our patient-centered approach means we involve you in every decision about your care, provide clear communication about your condition and treatment options, and support you throughout your healthcare journey.</p>
+              
+              <div class="row mt-4">
+                <div class="col-md-4">
+                  <div class="info-box">
+                    <h4>Easy Access</h4>
+                    <p>Convenient scheduling, telehealth options, and multiple locations to serve you better.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="info-box">
+                    <h4>Continuity of Care</h4>
+                    <p>Seamless coordination between specialists and your primary care provider.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="info-box">
+                    <h4>Support Services</h4>
+                    <p>Nutrition counseling, physical therapy, and mental health support integrated into your care plan.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+
+    </section><!-- /Services Overview Section -->
+    
+    <!-- CTA Section -->
+    <section id="cta" class="cta section light-background">
+      <div class="container" data-aos="fade-up">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+            <h3>Ready to Take the Next Step in Your Healthcare Journey?</h3>
+            <p>Contact us today to schedule a consultation or learn more about our services. Our team is here to answer your questions and help you access the care you need.</p>
+            <a class="cta-btn" href="contact.html">Contact Us</a>
+            <a class="cta-btn secondary" href="appointment.html">Schedule Appointment</a>
+          </div>
+        </div>
+      </div>
+    </section><!-- /CTA Section -->
+
+  </main>
+
+  <footer id="footer" class="footer light-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">Medilab</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p>A108 Adam Street</p>
+            <p>New York, NY 535022</p>
+            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
+            <p><strong>Email:</strong> <span>info@medilab.com</span></p>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="terms.html">Terms of service</a></li>
+            <li><a href="privacy.html">Privacy policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="cardiology.html">Cardiology</a></li>
+            <li><a href="neurology.html">Neurology</a></li>
+            <li><a href="orthopedics.html">Orthopedics</a></li>
+            <li><a href="pediatrics.html">Pediatrics</a></li>
+            <li><a href="dermatology.html">Dermatology</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Patient Resources</h4>
+          <ul>
+            <li><a href="patient-portal.html">Patient Portal</a></li>
+            <li><a href="insurance-info.html">Insurance Information</a></li>
+            <li><a href="billing-payments.html">Billing & Payments</a></li>
+            <li><a href="medical-records.html">Medical Records</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Additional Info</h4>
+          <ul>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="news.html">News & Events</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="locations.html">Our Locations</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Medilab</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+
+  <!-- Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
+</html>
