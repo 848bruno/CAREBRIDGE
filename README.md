@@ -1,215 +1,103 @@
 Medilab Healthcare – Django Medical Website
+<p align="center"> <img src="https://img.shields.io/badge/Medilab-Healthcare-blue"> <img src="https://img.shields.io/badge/Django-4.2-green"> <img src="https://img.shields.io/badge/Bootstrap-5.3-purple"> <img src="https://img.shields.io/badge/Design-Responsive-success"> </p>
 
+A modern, fully responsive healthcare website built with Django and Bootstrap featuring medical services, departments, doctor profiles, and appointment booking.
 
+🏥 Overview
 
-
-
-
-
-
-A comprehensive, responsive medical website built with Django featuring healthcare services, department information, doctor profiles, and an appointment booking system.
-
-🏥 Project Overview
-
-Medilab is a professional medical website template designed for hospitals, clinics, and healthcare providers.
-It offers a modern UI/UX with essential features such as service listings, doctor profiles, booking appointments, and patient resources.
+Medilab Healthcare provides a professional online presence for hospitals, clinics, and medical organizations.
+The template includes appointment booking, dynamic sections, and a clean, mobile-friendly UI.
 
 ✨ Features
-🎯 Core Features
+✔ Core Features
 
-Medical Service Showcase – Highlight healthcare services & specialties
+Medical Services Showcase
 
-Doctor Profiles – Medical team profiles with credentials
+Doctor Profiles
 
-Appointment Booking System – Online appointment scheduling
+Appointment Booking
 
-Department Information – Specialized medical departments
+Department Information
 
-Patient Resources – FAQ, health tips, educational content
+FAQs & Patient Resources
 
 🎨 Design Features
 
-Fully Responsive — Optimized for all devices
+Responsive & Mobile-Friendly
 
 Modern UI/UX
 
-Fast Loading & optimized performance
+Smooth Animations (AOS)
 
-Accessible — Web accessibility-friendly
+Fast & Lightweight
 
 💼 Business Features
 
-Contact Integration (email, phone, Google Maps)
-
-Service Catalog
+Contact Page + Google Map
 
 Testimonials
 
-Gallery Showcase
+Image Gallery
 
-🛠️ Technology Stack
-Backend
+Service Catalog
 
-Django 4.2+
+🛠 Tech Stack
 
-Python 3.8+
+Backend: Django 4.2, Python 3.8+
+Frontend: HTML5, CSS3, JavaScript, Bootstrap 5.3
+Database: SQLite (dev) / PostgreSQL (prod)
+Libraries: AOS, Swiper.js, Glightbox, PureCounter
 
-SQLite (Dev) / PostgreSQL (Production)
-
-Frontend
-
-HTML5
-
-CSS3
-
-JavaScript
-
-Bootstrap 5.3
-
-Bootstrap Icons & Font Awesome
-
-Additional Libraries
-
-AOS (Animate on Scroll)
-
-Swiper.js
-
-Glightbox
-
-PureCounter
-
-📁 Project Structure
+📂 Project Structure
 medilab-django/
-├── manage.py
-├── requirements.txt
-├── medilab/
-│   ├── settings.py
-│   ├── urls.py
-│   └── wsgi.py
-├── mainapp/
+│
+├── medilab/            # Project settings
+├── mainapp/            # Main application
 │   ├── models.py
 │   ├── views.py
 │   ├── urls.py
 │   └── templates/
 │       ├── index.html
-│       ├── services.html
-│       └── base.html
-├── static/
-│   ├── assets/
-│   │   ├── css/
-│   │   ├── js/
-│   │   ├── img/
-│   │   └── vendor/
-└── templates/
-    ├── base.html
-    └── pages/
+│       └── services.html
+│
+├── static/             # CSS, JS, images
+└── templates/          # Base templates
 
-🚀 Installation & Setup
-Prerequisites
-
-Python 3.8+
-
-pip
-
-Virtualenv (recommended)
-
-1. Clone the Repository
+🚀 Installation
+1. Clone the Project
 git clone https://github.com/yourusername/medilab-django.git
 cd medilab-django
 
 2. Create Virtual Environment
 python -m venv venv
-source venv/bin/activate   # Windows: venv\Scripts\activate
+# Windows
+venv\Scripts\activate
+# Linux/Mac
+source venv/bin/activate
 
 3. Install Dependencies
 pip install -r requirements.txt
 
-4. Configure Environment Variables
-cp .env.example .env
+4. Migrate Database
+python manage.py migrate
+
+5. Run the Development Server
+python manage.py runserver
 
 
-Edit .env:
+Open in browser:
+👉 http://localhost:8000
+
+⚙️ Environment Variables
+
+Create a .env file:
 
 DEBUG=True
 SECRET_KEY=your-secret-key
 DATABASE_URL=sqlite:///db.sqlite3
 ALLOWED_HOSTS=localhost,127.0.0.1
 
-5. Run Migrations
-python manage.py migrate
-
-6. Collect Static Files
-python manage.py collectstatic
-
-7. Create Superuser
-python manage.py createsuperuser
-
-8. Start Server
-python manage.py runserver
-
-
-Visit:
-
-http://localhost:8000
-
-⚙️ Configuration
-Static & Media Files
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']
-STATIC_ROOT = BASE_DIR / 'staticfiles'
-
-MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
-
-Template Settings
-TEMPLATES = [
-    {
-        'DIRS': [BASE_DIR / 'templates'],
-    },
-]
-
-📱 Pages & Sections
-Main Pages
-
-Home
-
-About
-
-Services
-
-Departments
-
-Doctors
-
-Contact
-
-Components
-
-Header & Hero Section
-
-Appointment Form
-
-Testimonials
-
-FAQ
-
-Footer
-
-🎨 Customization
-Add New Service
-<div class="service-item">
-  <div class="icon"><i class="fas fa-heartbeat"></i></div>
-  <h3>Cardiology</h3>
-  <p>Comprehensive heart care and interventions.</p>
-</div>
-
-Custom Colors (main.css)
-:root {
-  --primary-color: #0d6efd;
-  --medical-blue: #1976d2;
-}
-
-📊 Database Models (Sample)
+🧩 Key Models
 class Department(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
@@ -218,7 +106,7 @@ class Doctor(models.Model):
     name = models.CharField(max_length=100)
     specialty = models.CharField(max_length=100)
     bio = models.TextField()
-    photo = models.ImageField(upload_to='doctors/')
+    photo = models.ImageField(upload_to="doctors/")
 
 class Appointment(models.Model):
     name = models.CharField(max_length=100)
@@ -227,87 +115,53 @@ class Appointment(models.Model):
     date = models.DateTimeField()
     department = models.ForeignKey(Department, on_delete=models.CASCADE)
 
-🚀 Deployment
+🖌️ Customization
+Change Colors (static/assets/css/main.css)
+:root {
+  --primary: #0d6efd;
+  --secondary: #6c757d;
+  --medical-blue: #1976d2;
+}
+
+Add a Service Card
+<div class="service-item">
+  <i class="fas fa-heartbeat"></i>
+  <h3>Cardiology</h3>
+  <p>Advanced heart care and diagnostics.</p>
+</div>
+
+🌐 Deployment
 PostgreSQL Setup
 CREATE DATABASE medilab;
 CREATE USER medilabuser WITH PASSWORD 'password';
 GRANT ALL PRIVILEGES ON DATABASE medilab TO medilabuser;
 
-Production DATABASES Setting
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'medilab',
-        'USER': 'medilabuser',
-        'PASSWORD': 'password',
-        'HOST': 'localhost',
-    }
-}
 
-Deployment Options
-
-Heroku
-
-PythonAnywhere
-
-AWS EC2
-
-DigitalOcean
+Deployable on:
+✔ Heroku
+✔ DigitalOcean
+✔ PythonAnywhere
+✔ AWS EC2
 
 🤝 Contributing
 
 Fork the repo
 
-Create a branch:
-git checkout -b feature/NewFeature
+Create a branch
 
-Commit:
-git commit -m "Add NewFeature"
+Commit changes
 
-Push:
-git push origin feature/NewFeature
+Push
 
 Open a Pull Request
 
-🐛 Troubleshooting
-Issue	Solution
-Static files not loading	Run collectstatic
-Template errors	Check template paths
-Database issues	Run migrations
-Django compatibility	Update Django version
 📄 License
 
-Licensed under the MIT License.
+This project is licensed under the MIT License.
 
-Template Attribution
+Template Credit: BootstrapMade
+Icons: Font Awesome, Bootstrap Icons
 
-UI Template: BootstrapMade
+❤️ Medilab Healthcare
 
-Icons: Bootstrap Icons & Font Awesome
-
-👥 Target Audience
-
-Hospitals
-
-Clinics
-
-Healthcare centers
-
-Medical professionals
-
-📞 Support
-
-GitHub Issues
-
-Email: support@medilab.com
-
-🔄 Changelog
-v1.0.0
-
-Initial release
-
-Responsive UI
-
-Appointment system
-
-Doctor & department profiles
+Built with Django + Bootstrap
