@@ -1727,3 +1727,60 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+
+/* Events Page Specific Styles */
+.events-page .event-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.events-page .event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15) !important;
+}
+
+.events-page .category-card {
+    transition: transform 0.3s ease;
+}
+
+.events-page .category-card:hover {
+    transform: translateY(-3px);
+}
+
+/* Ensure proper image display */
+.events-page .card-img-top {
+    object-fit: cover;
+}
+
+/* Event badge styles */
+.events-page .rounded-pill {
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* Blog Page Specific Styles */
+.blog-page .featured-article .card-img-top {
+    transition: transform 0.3s ease;
+}
+
+.blog-page .featured-article:hover .card-img-top {
+    transform: scale(1.02);
+}
+
+.blog-page .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-page .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15) !important;
+}
+
+.blog-page .sidebar {
+    position: sticky;
+    top: 100px;
+}
+
+/* Ensure proper image display */
+.blog-page .card-img-top {
+    object-fit: cover;
+}
