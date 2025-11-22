@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Billing & Payments - Medilab Healthcare Services</title>
+  <meta name="description" content="Manage your medical bills, make payments, and understand your insurance coverage with Medilab's transparent billing system.">
+  <meta name="keywords" content="medical billing, healthcare payments, insurance claims, medical expenses, payment plans">
+  {% load static %}
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Medilab
+  * Template URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="billing-page">
+
+  <header id="header" class="header sticky-top">
+
+    <div class="topbar d-flex align-items-center">
+      <div class="container d-flex justify-content-center justify-content-md-between">
+        <div class="contact-info d-flex align-items-center">
+          <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:billing@medilab.com">billing@medilab.com</a></i>
+          <i class="bi bi-phone d-flex align-items-center ms-4"><span>+1 5589 55488 55</span></i>
+        </div>
+        <div class="social-links d-none d-md-flex align-items-center">
+          <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+    </div><!-- End Top Bar -->
+
+    <div class="branding d-flex align-items-center">
+
+      <div class="container position-relative d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center me-auto">
+          <h1 class="sitename">Medilab</h1>
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="departments.html">Departments</a></li>
+            <li><a href="doctors.html">Doctors</a></li>
+            <li class="dropdown"><a href="#"><span>Resources</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <ul>
+                <li><a href="health-tips.html">Health Tips</a></li>
+                <li class="dropdown"><a href="#"><span>Patient Resources</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                  <ul>
+                    <li><a href="patient-forms.html">Patient Forms</a></li>
+                    <li><a href="insurance-info.html">Insurance Information</a></li>
+                    <li><a href="billing-payments.html" class="active">Billing & Payments</a></li>
+                    <li><a href="medical-records.html">Medical Records</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                  </ul>
+                </li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="careers.html">Careers</a></li>
+              </ul>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+
+        <a class="cta-btn d-none d-sm-block" href="appointment.html">Make an Appointment</a>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title" data-aos="fade">
+      <div class="heading">
+        <div class="container">
+          <div class="row d-flex justify-content-center text-center">
+            <div class="col-lg-8">
+              <h1>Billing & Payments</h1>
+              <p class="mb-0">Transparent medical billing and convenient payment options for your healthcare needs</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav class="breadcrumbs">
+        <div class="container">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Patient Resources</a></li>
+            <li class="current">Billing & Payments</li>
+          </ol>
+        </div>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <!-- Billing Overview Section -->
+    <section id="billing-overview" class="billing-overview section bg-light">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6" data-aos="fade-right">
+            <h2 class="display-6 fw-bold mb-4">Understanding Your Medical Bills</h2>
+            <p class="lead mb-4">We believe in transparent billing practices. Understand your medical expenses, insurance coverage, and payment options with our comprehensive billing system.</p>
+            <div class="d-flex flex-wrap gap-3">
+              <a href="#current-bills" class="btn btn-primary btn-lg">View Current Bills</a>
+              <a href="#payment-options" class="btn btn-outline-primary btn-lg">Payment Options</a>
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="card border-0 shadow">
+              <div class="card-body p-4 text-center">
+                <h4 class="card-title mb-4">Need Billing Assistance?</h4>
+                <div class="text-center mb-4">
+                  <i class="bi bi-headset text-primary display-4"></i>
+                </div>
+                <p class="text-muted mb-4">Our billing specialists are available to help you understand your charges and payment options.</p>
+                <div class="d-flex flex-column gap-2">
+                  <a href="tel:+15589548855" class="btn btn-primary">
+                    <i class="bi bi-phone me-2"></i>Call Billing: +1 5589 55488 55
+                  </a>
+                  <a href="mailto:billing@medilab.com" class="btn btn-outline-primary">
+                    <i class="bi bi-envelope me-2"></i>Email Billing Department
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Billing Overview Section -->
+
+    <!-- Current Bills Section -->
+    <section id="current-bills" class="current-bills section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12 text-center">
+            <h2 class="mb-3">Your Current Bills</h2>
+            <p class="text-muted">Review and manage your outstanding medical bills</p>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <!-- Bill Summary -->
+          <div class="col-lg-4" data-aos="fade-up">
+            <div class="card border-0 shadow-sm h-100">
+              <div class="card-header bg-primary text-white">
+                <h5 class="card-title mb-0">Billing Summary</h5>
+              </div>
+              <div class="card-body">
+                <div class="d-flex justify-content-between mb-3">
+                  <span>Total Outstanding:</span>
+                  <strong class="text-primary">$1,250.00</strong>
+                </div>
+                <div class="d-flex justify-content-between mb-3">
+                  <span>Due Within 30 Days:</span>
+                  <strong>$850.00</strong>
+                </div>
+                <div class="d-flex justify-content-between mb-3">
+                  <span>Insurance Processing:</span>
+                  <span class="text-muted">$400.00</span>
+                </div>
+                <div class="d-flex justify-content-between mb-3">
+                  <span>Last Payment:</span>
+                  <span class="text-success">$150.00</span>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <span>Payment Due Date:</span>
+                  <strong class="text-danger">15 Days</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bill Details -->
+          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
+            <div class="card border-0 shadow-sm">
+              <div class="card-header bg-light">
+                <h5 class="card-title mb-0">Bill Details</h5>
+              </div>
+              <div class="card-body p-0">
+                <div class="table-responsive">
+                  <table class="table table-hover mb-0">
+                    <thead class="table-light">
+                      <tr>
+                        <th>Date</th>
+                        <th>Service</th>
+                        <th>Provider</th>
+                        <th>Insurance</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>03/15/2024</td>
+                        <td>Cardiology Consultation</td>
+                        <td>Dr. Sarah Johnson</td>
+                        <td>BCBS</td>
+                        <td>$250.00</td>
+                        <td><span class="badge bg-warning">Pending Insurance</span></td>
+                        <td>
+                          <button class="btn btn-sm btn-outline-primary">View Details</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>03/10/2024</td>
+                        <td>Lab Tests</td>
+                        <td>Medilab Laboratory</td>
+                        <td>BCBS</td>
+                        <td>$180.00</td>
+                        <td><span class="badge bg-warning">Pending Insurance</span></td>
+                        <td>
+                          <button class="btn btn-sm btn-outline-primary">View Details</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>02/28/2024</td>
+                        <td>Annual Physical</td>
+                        <td>Dr. Emily Rodriguez</td>
+                        <td>Patient Responsibility</td>
+                        <td>$150.00</td>
+                        <td><span class="badge bg-danger">Due Now</span></td>
+                        <td>
+                          <button class="btn btn-sm btn-primary">Pay Now</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>02/15/2024</td>
+                        <td>X-Ray Services</td>
+                        <td>Radiology Dept</td>
+                        <td>Patient Responsibility</td>
+                        <td>$220.00</td>
+                        <td><span class="badge bg-danger">Due Now</span></td>
+                        <td>
+                          <button class="btn btn-sm btn-primary">Pay Now</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>01/20/2024</td>
+                        <td>Specialist Consultation</td>
+                        <td>Dr. Michael Chen</td>
+                        <td>Paid</td>
+                        <td>$300.00</td>
+                        <td><span class="badge bg-success">Paid</span></td>
+                        <td>
+                          <button class="btn btn-sm btn-outline-secondary">Receipt</button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Current Bills Section -->
+
+    <!-- Payment Options Section -->
+    <section id="payment-options" class="payment-options section bg-light">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12 text-center">
+            <h2 class="mb-3">Payment Options</h2>
+            <p class="text-muted">Flexible payment methods to suit your needs</p>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4" data-aos="fade-up">
+            <div class="card border-0 shadow-sm h-100 text-center">
+              <div class="card-body p-4">
+                <div class="payment-icon bg-primary text-white rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                  <i class="bi bi-credit-card display-6"></i>
+                </div>
+                <h5 class="card-title">Online Payment</h5>
+                <p class="card-text text-muted">Secure online payments through our patient portal. Pay with credit/debit cards or bank transfer.</p>
+                <a href="#online-payment" class="btn btn-outline-primary">Pay Online</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="card border-0 shadow-sm h-100 text-center">
+              <div class="card-body p-4">
+                <div class="payment-icon bg-success text-white rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                  <i class="bi bi-calendar-check display-6"></i>
+                </div>
+                <h5 class="card-title">Payment Plans</h5>
+                <p class="card-text text-muted">Flexible monthly payment plans with 0% interest for qualified patients. No credit check required.</p>
+                <a href="#payment-plans" class="btn btn-outline-primary">Learn More</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="card border-0 shadow-sm h-100 text-center">
+              <div class="card-body p-4">
+                <div class="payment-icon bg-info text-white rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                  <i class="bi bi-building display-6"></i>
+                </div>
+                <h5 class="card-title">In-Person Payment</h5>
+                <p class="card-text text-muted">Visit our billing office to make payments with cash, check, or credit card during business hours.</p>
+                <a href="#in-person" class="btn btn-outline-primary">Office Hours</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Payment Options Section -->
+
+    <!-- Online Payment Section -->
+    <section id="online-payment" class="online-payment section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="card border-0 shadow-lg">
+              <div class="card-header bg-primary text-white py-4">
+                <h3 class="card-title text-center mb-0">Make an Online Payment</h3>
+              </div>
+              <div class="card-body p-5">
+                <form id="paymentForm">
+                  <!-- Patient Information -->
+                  <div class="row g-3 mb-4">
+                    <div class="col-12">
+                      <h5 class="border-bottom pb-2">Patient Information</h5>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="accountNumber" class="form-label">Account Number <span class="text-danger">*</span></label>
+                      <input type="text" class="form-control" id="accountNumber" required>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="patientDob" class="form-label">Date of Birth <span class="text-danger">*</span></label>
+                      <input type="date" class="form-control" id="patientDob" required>
+                    </div>
+                  </div>
+
+                  <!-- Payment Amount -->
+                  <div class="row g-3 mb-4">
+                    <div class="col-12">
+                      <h5 class="border-bottom pb-2">Payment Amount</h5>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="paymentAmount" class="form-label">Amount to Pay ($) <span class="text-danger">*</span></label>
+                      <input type="number" class="form-control" id="paymentAmount" min="1" step="0.01" required>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label">Quick Pay Options</label>
+                      <div class="d-flex gap-2 flex-wrap">
+                        <button type="button" class="btn btn-outline-primary btn-sm" onclick="setAmount(50)">$50</button>
+                        <button type="button" class="btn btn-outline-primary btn-sm" onclick="setAmount(100)">$100</button>
+                        <button type="button" class="btn btn-outline-primary btn-sm" onclick="setAmount(250)">$250</button>
+                        <button type="button" class="btn btn-outline-primary btn-sm" onclick="setAmount(500)">$500</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Payment Method -->
+                  <div class="row g-3 mb-4">
+                    <div class="col-12">
+                      <h5 class="border-bottom pb-2">Payment Method</h5>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="paymentMethod" id="creditCard" checked>
+                        <label class="form-check-label" for="creditCard">
+                          Credit/Debit Card
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="paymentMethod" id="bankTransfer">
+                        <label class="form-check-label" for="bankTransfer">
+                          Bank Transfer (ACH)
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Credit Card Details -->
+                  <div id="creditCardDetails">
+                    <div class="row g-3 mb-4">
+                      <div class="col-12">
+                        <label for="cardNumber" class="form-label">Card Number <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="cardNumber" placeholder="1234 5678 9012 3456">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="expiryDate" class="form-label">Expiry Date <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="expiryDate" placeholder="MM/YY">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="cvv" class="form-label">CVV <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="cvv" placeholder="123">
+                      </div>
+                      <div class="col-12">
+                        <label for="cardName" class="form-label">Name on Card <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="cardName">
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Bank Transfer Details -->
+                  <div id="bankTransferDetails" style="display: none;">
+                    <div class="row g-3 mb-4">
+                      <div class="col-12">
+                        <label for="routingNumber" class="form-label">Routing Number <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="routingNumber">
+                      </div>
+                      <div class="col-12">
+                        <label for="accountNumberBank" class="form-label">Account Number <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="accountNumberBank">
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Billing Address -->
+                  <div class="row g-3 mb-4">
+                    <div class="col-12">
+                      <h5 class="border-bottom pb-2">Billing Address</h5>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="sameAsPatient">
+                        <label class="form-check-label" for="sameAsPatient">
+                          Same as patient address
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <label for="billingAddress" class="form-label">Address <span class="text-danger">*</span></label>
+                      <input type="text" class="form-control" id="billingAddress">
+                    </div>
+                    <div class="col-md-6">
+                      <label for="billingCity" class="form-label">City <span class="text-danger">*</span></label>
+                      <input type="text" class="form-control" id="billingCity">
+                    </div>
+                    <div class="col-md-3">
+                      <label for="billingState" class="form-label">State <span class="text-danger">*</span></label>
+                      <input type="text" class="form-control" id="billingState">
+                    </div>
+                    <div class="col-md-3">
+                      <label for="billingZip" class="form-label">ZIP <span class="text-danger">*</span></label>
+                      <input type="text" class="form-control" id="billingZip">
+                    </div>
+                  </div>
+
+                  <!-- Terms and Submission -->
+                  <div class="row g-3">
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="paymentTerms" required>
+                        <label class="form-check-label" for="paymentTerms">
+                          I authorize Medilab to charge the specified amount to my selected payment method. I understand this payment is non-refundable.
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="d-grid">
+                        <button type="submit" class="btn btn-primary btn-lg">
+                          <i class="bi bi-lock-fill me-2"></i>Submit Secure Payment
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Online Payment Section -->
+
+    <!-- Insurance Information Section -->
+    <section id="insurance-info" class="insurance-info section bg-light">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12 text-center">
+            <h2 class="mb-3">Insurance Information</h2>
+            <p class="text-muted">Understanding your insurance coverage and benefits</p>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-6" data-aos="fade-up">
+            <div class="card border-0 shadow-sm h-100">
+              <div class="card-header bg-info text-white">
+                <h5 class="card-title mb-0">Accepted Insurance Plans</h5>
+              </div>
+              <div class="card-body">
+                <ul class="list-unstyled">
+                  <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Blue Cross Blue Shield</li>
+                  <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Aetna</li>
+                  <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Cigna</li>
+                  <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>UnitedHealthcare</li>
+                  <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Medicare</li>
+                  <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Medicaid</li>
+                  <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Humana</li>
+                  <li><i class="bi bi-check-circle-fill text-success me-2"></i>Many Regional Plans</li>
+                </ul>
+                <div class="alert alert-info mt-3">
+                  <small>Insurance coverage may vary by plan. Please contact your insurance provider to verify benefits.</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="card border-0 shadow-sm h-100">
+              <div class="card-header bg-warning text-dark">
+                <h5 class="card-title mb-0">Insurance Claims Process</h5>
+              </div>
+              <div class="card-body">
+                <div class="d-flex mb-3">
+                  <div class="flex-shrink-0">
+                    <span class="badge bg-primary rounded-circle p-2 me-3">1</span>
+                  </div>
+                  <div class="flex-grow-1">
+                    <h6>Service Provided</h6>
+                    <p class="small text-muted mb-0">Medical services are provided and documented</p>
+                  </div>
+                </div>
+                <div class="d-flex mb-3">
+                  <div class="flex-shrink-0">
+                    <span class="badge bg-primary rounded-circle p-2 me-3">2</span>
+                  </div>
+                  <div class="flex-grow-1">
+                    <h6>Claim Submission</h6>
+                    <p class="small text-muted mb-0">We submit claims to your insurance within 7 business days</p>
+                  </div>
+                </div>
+                <div class="d-flex mb-3">
+                  <div class="flex-shrink-0">
+                    <span class="badge bg-primary rounded-circle p-2 me-3">3</span>
+                  </div>
+                  <div class="flex-grow-1">
+                    <h6>Insurance Processing</h6>
+                    <p class="small text-muted mb-0">Insurance company processes claim (30-60 days)</p>
+                  </div>
+                </div>
+                <div class="d-flex">
+                  <div class="flex-shrink-0">
+                    <span class="badge bg-primary rounded-circle p-2 me-3">4</span>
+                  </div>
+                  <div class="flex-grow-1">
+                    <h6>Patient Responsibility</h6>
+                    <p class="small text-muted mb-0">You receive bill for any remaining balance after insurance payment</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Insurance Information Section -->
+
+    <!-- FAQ Section -->
+    <section id="billing-faq" class="billing-faq section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12 text-center">
+            <h2 class="mb-3">Billing FAQs</h2>
+            <p class="text-muted">Common questions about medical billing and payments</p>
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="accordion" id="billingFAQ">
+              <div class="accordion-item" data-aos="fade-up">
+                <h3 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                    Why am I receiving a bill if I have insurance?
+                  </button>
+                </h3>
+                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#billingFAQ">
+                  <div class="accordion-body">
+                    Even with insurance, you may be responsible for copayments, deductibles, coinsurance, or services not covered by your plan. Your insurance company determines what portion of the bill they will pay based on your specific plan benefits.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                    How can I set up a payment plan?
+                  </button>
+                </h3>
+                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#billingFAQ">
+                  <div class="accordion-body">
+                    You can set up a payment plan by calling our billing department at (555) 123-4567 or through your patient portal. We offer flexible monthly payment options with 0% interest for qualified patients.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                    What if I can't afford to pay my medical bill?
+                  </button>
+                </h3>
+                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#billingFAQ">
+                  <div class="accordion-body">
+                    We offer financial assistance programs for qualified patients. Please contact our financial counseling department to discuss your situation and explore available options, including charity care and sliding scale fees.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item" data-aos="fade-up" data-aos-delay="300">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                    How long does insurance processing take?
+                  </button>
+                </h3>
+                <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#billingFAQ">
+                  <div class="accordion-body">
+                    Insurance claims typically take 30-60 days to process. During this time, you may see the balance on your account. Once your insurance company processes the claim, we'll update your balance accordingly and send you a new statement.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End FAQ Section -->
+
+  </main>
+
+  <footer id="footer" class="footer light-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">Medilab</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p>A108 Adam Street</p>
+            <p>New York, NY 535022</p>
+            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
+            <p><strong>Email:</strong> <span>billing@medilab.com</span></p>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="doctors.html">Doctors</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="cardiology.html">Cardiology</a></li>
+            <li><a href="neurology.html">Neurology</a></li>
+            <li><a
