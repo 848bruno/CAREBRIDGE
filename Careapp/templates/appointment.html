@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Book Appointment - Medilab Healthcare Services</title>
+  <meta name="description" content="Schedule your medical appointment with Medilab's expert healthcare providers. Easy online booking for consultations, check-ups, and specialized treatments.">
+  <meta name="keywords" content="medical appointment, book doctor, healthcare consultation, schedule appointment, medical booking">
+  {% load static %}
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Medilab
+  * Template URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="appointment-page">
+
+  <header id="header" class="header sticky-top">
+
+    <div class="topbar d-flex align-items-center">
+      <div class="container d-flex justify-content-center justify-content-md-between">
+        <div class="contact-info d-flex align-items-center">
+          <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:appointments@medilab.com">appointments@medilab.com</a></i>
+          <i class="bi bi-phone d-flex align-items-center ms-4"><span>+1 5589 55488 55</span></i>
+        </div>
+        <div class="social-links d-none d-md-flex align-items-center">
+          <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+    </div><!-- End Top Bar -->
+
+    <div class="branding d-flex align-items-center">
+
+      <div class="container position-relative d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center me-auto">
+          <h1 class="sitename">Medilab</h1>
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="departments.html">Departments</a></li>
+            <li><a href="doctors.html">Doctors</a></li>
+            <li class="dropdown"><a href="#"><span>Resources</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <ul>
+                <li><a href="health-tips.html">Health Tips</a></li>
+                <li class="dropdown"><a href="#"><span>Patient Resources</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                  <ul>
+                    <li><a href="patient-forms.html">Patient Forms</a></li>
+                    <li><a href="insurance-info.html">Insurance Information</a></li>
+                    <li><a href="billing-payments.html">Billing & Payments</a></li>
+                    <li><a href="medical-records.html">Medical Records</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                  </ul>
+                </li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="careers.html">Careers</a></li>
+              </ul>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+
+        <a class="cta-btn d-none d-sm-block" href="appointment.html">Make an Appointment</a>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title" data-aos="fade">
+      <div class="heading">
+        <div class="container">
+          <div class="row d-flex justify-content-center text-center">
+            <div class="col-lg-8">
+              <h1>Book Your Appointment</h1>
+              <p class="mb-0">Schedule your visit with our healthcare professionals for personalized medical care</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav class="breadcrumbs">
+        <div class="container">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Appointment</li>
+          </ol>
+        </div>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <!-- Appointment Hero Section -->
+    <section id="appointment-hero" class="appointment-hero section bg-light">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6" data-aos="fade-right">
+            <h2 class="display-6 fw-bold mb-4">Easy Online Appointment Booking</h2>
+            <p class="lead mb-4">Schedule your medical consultation with our expert healthcare providers in just a few clicks. We're here to make your healthcare journey seamless and convenient.</p>
+            <div class="d-flex flex-wrap gap-3 mb-4">
+              <div class="d-flex align-items-center">
+                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                <span>Quick & Easy Booking</span>
+              </div>
+              <div class="d-flex align-items-center">
+                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                <span>24/7 Online Scheduling</span>
+              </div>
+              <div class="d-flex align-items-center">
+                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                <span>Instant Confirmation</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="card border-0 shadow">
+              <div class="card-body p-4">
+                <h4 class="card-title text-center mb-4">Need Immediate Assistance?</h4>
+                <div class="text-center mb-4">
+                  <i class="bi bi-telephone-fill text-primary display-4"></i>
+                </div>
+                <p class="text-center text-muted mb-4">For urgent medical concerns or same-day appointments, please call our scheduling team directly.</p>
+                <div class="text-center">
+                  <a href="tel:+15589548855" class="btn btn-primary btn-lg">
+                    <i class="bi bi-phone me-2"></i>Call Now: +1 5589 55488 55
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Appointment Hero Section -->
+
+    <!-- Appointment Form Section -->
+    <section id="appointment-form" class="appointment-form section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="card border-0 shadow-lg">
+              <div class="card-header bg-primary text-white py-4">
+                <h3 class="card-title text-center mb-0">Schedule Your Appointment</h3>
+              </div>
+              <div class="card-body p-5">
+                <form class="row g-4" id="appointmentBookingForm">
+                  <!-- Personal Information -->
+                  <div class="col-12">
+                    <h5 class="border-bottom pb-2 mb-4">Personal Information</h5>
+                  </div>
+                  
+                  <div class="col-md-6">
+                    <label for="firstName" class="form-label">First Name <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="firstName" name="firstName" required>
+                  </div>
+                  
+                  <div class="col-md-6">
+                    <label for="lastName" class="form-label">Last Name <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="lastName" name="lastName" required>
+                  </div>
+                  
+                  <div class="col-md-6">
+                    <label for="email" class="form-label">Email Address <span class="text-danger">*</span></label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                  </div>
+                  
+                  <div class="col-md-6">
+                    <label for="phone" class="form-label">Phone Number <span class="text-danger">*</span></label>
+                    <input type="tel" class="form-control" id="phone" name="phone" required>
+                  </div>
+                  
+                  <div class="col-md-6">
+                    <label for="dateOfBirth" class="form-label">Date of Birth <span class="text-danger">*</span></label>
+                    <input type="date" class="form-control" id="dateOfBirth" name="dateOfBirth" required>
+                  </div>
+                  
+                  <div class="col-md-6">
+                    <label for="gender" class="form-label">Gender <span class="text-danger">*</span></label>
+                    <select class="form-select" id="gender" name="gender" required>
+                      <option value="">Select Gender</option>
+                      <option value="male">Male</option>
+                      <option value="female">Female</option>
+                      <option value="other">Other</option>
+                      <option value="prefer-not-to-say">Prefer not to say</option>
+                    </select>
+                  </div>
+
+                  <!-- Appointment Details -->
+                  <div class="col-12 mt-4">
+                    <h5 class="border-bottom pb-2 mb-4">Appointment Details</h5>
+                  </div>
+                  
+                  <div class="col-md-6">
+                    <label for="department" class="form-label">Department <span class="text-danger">*</span></label>
+                    <select class="form-select" id="department" name="department" required>
+                      <option value="">Select Department</option>
+                      <option value="cardiology">Cardiology</option>
+                      <option value="neurology">Neurology</option>
+                      <option value="orthopedics">Orthopedics</option>
+                      <option value="pediatrics">Pediatrics</option>
+                      <option value="dermatology">Dermatology</option>
+                      <option value="internal-medicine">Internal Medicine</option>
+                      <option value="surgery">Surgery</option>
+                      <option value="emergency">Emergency Medicine</option>
+                    </select>
+                  </div>
+                  
+                  <div class="col-md-6">
+                    <label for="doctor" class="form-label">Preferred Doctor</label>
+                    <select class="form-select" id="doctor" name="doctor">
+                      <option value="">Any Available Doctor</option>
+                      <option value="dr-johnson">Dr. Sarah Johnson (Cardiology)</option>
+                      <option value="dr-chen">Dr. Michael Chen (Neurology)</option>
+                      <option value="dr-rodriguez">Dr. Emily Rodriguez (Internal Medicine)</option>
+                      <option value="dr-wilson">Dr. James Wilson (Orthopedics)</option>
+                      <option value="dr-jepson">Dr. Amanda Jepson (Pediatrics)</option>
+                    </select>
+                  </div>
+                  
+                  <div class="col-md-6">
+                    <label for="appointmentDate" class="form-label">Preferred Date <span class="text-danger">*</span></label>
+                    <input type="date" class="form-control" id="appointmentDate" name="appointmentDate" min="" required>
+                  </div>
+                  
+                  <div class="col-md-6">
+                    <label for="appointmentTime" class="form-label">Preferred Time <span class="text-danger">*</span></label>
+                    <select class="form-select" id="appointmentTime" name="appointmentTime" required>
+                      <option value="">Select Time Slot</option>
+                      <option value="08:00">8:00 AM</option>
+                      <option value="08:30">8:30 AM</option>
+                      <option value="09:00">9:00 AM</option>
+                      <option value="09:30">9:30 AM</option>
+                      <option value="10:00">10:00 AM</option>
+                      <option value="10:30">10:30 AM</option>
+                      <option value="11:00">11:00 AM</option>
+                      <option value="11:30">11:30 AM</option>
+                      <option value="13:00">1:00 PM</option>
+                      <option value="13:30">1:30 PM</option>
+                      <option value="14:00">2:00 PM</option>
+                      <option value="14:30">2:30 PM</option>
+                      <option value="15:00">3:00 PM</option>
+                      <option value="15:30">3:30 PM</option>
+                      <option value="16:00">4:00 PM</option>
+                      <option value="16:30">4:30 PM</option>
+                    </select>
+                  </div>
+                  
+                  <div class="col-12">
+                    <label for="appointmentType" class="form-label">Appointment Type <span class="text-danger">*</span></label>
+                    <select class="form-select" id="appointmentType" name="appointmentType" required>
+                      <option value="">Select Appointment Type</option>
+                      <option value="consultation">New Patient Consultation</option>
+                      <option value="follow-up">Follow-up Visit</option>
+                      <option value="routine-checkup">Routine Check-up</option>
+                      <option value="emergency">Emergency Visit</option>
+                      <option value="telemedicine">Telemedicine Consultation</option>
+                      <option value="procedure">Medical Procedure</option>
+                    </select>
+                  </div>
+
+                  <!-- Medical Information -->
+                  <div class="col-12 mt-4">
+                    <h5 class="border-bottom pb-2 mb-4">Medical Information</h5>
+                  </div>
+                  
+                  <div class="col-12">
+                    <label for="reason" class="form-label">Reason for Visit <span class="text-danger">*</span></label>
+                    <textarea class="form-control" id="reason" name="reason" rows="4" placeholder="Please describe your symptoms or reason for scheduling this appointment..." required></textarea>
+                  </div>
+                  
+                  <div class="col-12">
+                    <label for="symptoms" class="form-label">Current Symptoms</label>
+                    <textarea class="form-control" id="symptoms" name="symptoms" rows="3" placeholder="List any current symptoms you're experiencing..."></textarea>
+                  </div>
+                  
+                  <div class="col-12">
+                    <label for="medications" class="form-label">Current Medications</label>
+                    <textarea class="form-control" id="medications" name="medications" rows="2" placeholder="List any medications you're currently taking..."></textarea>
+                  </div>
+
+                  <!-- Insurance Information -->
+                  <div class="col-12 mt-4">
+                    <h5 class="border-bottom pb-2 mb-4">Insurance Information</h5>
+                  </div>
+                  
+                  <div class="col-md-6">
+                    <label for="insuranceProvider" class="form-label">Insurance Provider</label>
+                    <input type="text" class="form-control" id="insuranceProvider" name="insuranceProvider" placeholder="e.g., Blue Cross Blue Shield">
+                  </div>
+                  
+                  <div class="col-md-6">
+                    <label for="insuranceId" class="form-label">Insurance ID Number</label>
+                    <input type="text" class="form-control" id="insuranceId" name="insuranceId" placeholder="Your insurance member ID">
+                  </div>
+
+                  <!-- Terms and Submission -->
+                  <div class="col-12 mt-4">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="terms" name="terms" required>
+                      <label class="form-check-label" for="terms">
+                        I agree to the <a href="privacy-policy.html" class="text-primary">Privacy Policy</a> and <a href="terms-of-service.html" class="text-primary">Terms of Service</a>. I understand that this appointment request is subject to confirmation by Medilab staff.
+                      </label>
+                    </div>
+                  </div>
+                  
+                  <div class="col-12">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="consent" name="consent" required>
+                      <label class="form-check-label" for="consent">
+                        I consent to receiving appointment reminders and healthcare communications via email and SMS.
+                      </label>
+                    </div>
+                  </div>
+                  
+                  <div class="col-12 mt-4">
+                    <div class="d-grid">
+                      <button type="submit" class="btn btn-primary btn-lg">
+                        <i class="bi bi-calendar-check me-2"></i>Schedule Appointment
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Appointment Form Section -->
+
+    <!-- Why Choose Us Section -->
+    <section id="appointment-benefits" class="appointment-benefits section bg-light">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12 text-center">
+            <h2 class="mb-3">Why Choose Medilab for Your Healthcare Needs?</h2>
+            <p class="text-muted">Experience the difference with our patient-centered approach</p>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3" data-aos="fade-up">
+            <div class="text-center">
+              <div class="benefit-icon bg-primary text-white rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                <i class="bi bi-clock-history display-6"></i>
+              </div>
+              <h5>Minimal Wait Times</h5>
+              <p class="text-muted">We respect your time with efficient scheduling and prompt service.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="text-center">
+              <div class="benefit-icon bg-success text-white rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                <i class="bi bi-laptop display-6"></i>
+              </div>
+              <h5>Telemedicine Options</h5>
+              <p class="text-muted">Virtual consultations available for your convenience and safety.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+            <div class="text-center">
+              <div class="benefit-icon bg-info text-white rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                <i class="bi bi-file-medical display-6"></i>
+              </div>
+              <h5>Digital Records</h5>
+              <p class="text-muted">Secure electronic health records for seamless care coordination.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+            <div class="text-center">
+              <div class="benefit-icon bg-warning text-dark rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                <i class="bi bi-calendar2-check display-6"></i>
+              </div>
+              <h5>Easy Rescheduling</h5>
+              <p class="text-muted">Flexible appointment changes to accommodate your schedule.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Why Choose Us Section -->
+
+    <!-- FAQ Section -->
+    <section id="appointment-faq" class="appointment-faq section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12 text-center">
+            <h2 class="mb-3">Appointment FAQs</h2>
+            <p class="text-muted">Common questions about scheduling and preparing for your visit</p>
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="accordion" id="appointmentFAQ">
+              <div class="accordion-item" data-aos="fade-up">
+                <h3 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                    How soon can I get an appointment?
+                  </button>
+                </h3>
+                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#appointmentFAQ">
+                  <div class="accordion-body">
+                    Most new patients can be scheduled within 2-3 business days. Urgent cases are accommodated same-day or next-day whenever possible. You can also check our online calendar for immediate availability.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                    What should I bring to my first appointment?
+                  </button>
+                </h3>
+                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#appointmentFAQ">
+                  <div class="accordion-body">
+                    Please bring your photo ID, insurance card, list of current medications, and any relevant medical records or test results from previous providers. Arriving 15 minutes early will help ensure a smooth check-in process.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                    Do you offer telemedicine appointments?
+                  </button>
+                </h3>
+                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#appointmentFAQ">
+                  <div class="accordion-body">
+                    Yes, we offer telemedicine consultations for many types of visits including follow-ups, medication management, and certain specialty consultations. During booking, select "Telemedicine Consultation" as your appointment type.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item" data-aos="fade-up" data-aos-delay="300">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                    What is your cancellation policy?
+                  </button>
+                </h3>
+                <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#appointmentFAQ">
+                  <div class="accordion-body">
+                    We require 24 hours notice for appointment cancellations. Late cancellations or no-shows may be subject to a fee. You can cancel or reschedule your appointment online through our patient portal or by calling our office.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End FAQ Section -->
+
+    <!-- Emergency Section -->
+    <section id="emergency-info" class="emergency-info section bg-danger text-white">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-8">
+            <div class="d-flex align-items-center justify-content-center mb-3">
+              <i class="bi bi-exclamation-triangle-fill display-4 me-3"></i>
+              <h3 class="mb-0">Medical Emergency?</h3>
+            </div>
+            <p class="lead mb-4">If you are experiencing a medical emergency, please call 911 immediately or go to the nearest emergency room.</p>
+            <div class="d-flex gap-3 justify-content-center flex-wrap">
+              <a href="tel:911" class="btn btn-light btn-lg">
+                <i class="bi bi-telephone-fill me-2"></i>Call 911
+              </a>
+              <a href="emergency.html" class="btn btn-outline-light btn-lg">Emergency Services</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Emergency Section -->
+
+  </main>
+
+  <footer id="footer" class="footer light-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">Medilab</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p>A108 Adam Street</p>
+            <p>New York, NY 535022</p>
+            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
+            <p><strong>Email:</strong> <span>appointments@medilab.com</span></p>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="doctors.html">Doctors</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="cardiology.html">Cardiology</a></li>
+            <li><a href="neurology.html">Neurology</a></li>
+            <li><a href="orthopedics.html">Orthopedics</a></li>
+            <li><a href="pediatrics.html">Pediatrics</a></li>
+            <li><a href="dermatology.html">Dermatology</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Patient Resources</h4>
+          <ul>
+            <li><a href="patient-portal.html">Patient Portal</a></li>
+            <li><a href="insurance-info.html">Insurance Information</a></li>
+            <li><a href="billing-payments.html">Billing & Payments</a></li>
+            <li><a href="medical-records.html">Medical Records</a></li>
+            <li><a href="appointment.html">Book Appointment</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Additional Info</h4>
+          <ul>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="news.html">News & Events</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="locations.html">Our Locations</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Medilab</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+
+  <!-- Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+  <!-- Appointment Page JavaScript -->
+  <script>
+    // Set minimum date for appointment to today
+    document.addEventListener('DOMContentLoaded', function() {
+      const today = new Date().toISOString().split('T')[0];
+      document.getElementById('appointmentDate').min = today;
+      
+      // Set minimum date for date of birth (assuming patients must be at least 1 year old)
+      const minDob = new Date();
+      minDob.setFullYear(minDob.getFullYear() - 120);
+      document.getElementById('dateOfBirth').max = new Date().toISOString().split('T')[0];
+      
+      // Form submission handler
+      document.getElementById('appointmentBookingForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        // Here you would typically send the form data to your server
+        alert('Thank you! Your appointment request has been submitted. We will contact you shortly to confirm your appointment.');
+        this.reset();
+      });
+    });
+  </script>
+
+</body>
+
+</html>
