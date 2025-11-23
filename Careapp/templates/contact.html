@@ -681,39 +681,47 @@
   <!-- Main JS File -->
   <script src="{% static 'assets/js/main.js' %}"></script>
 
-  <!-- Contact Page JavaScript -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Form submission handler
-      document.getElementById('contactForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get urgency level
-        const urgency = document.getElementById('contactUrgency').value;
-        let responseTime = '';
-        
-        switch(urgency) {
-          case 'routine':
-            responseTime = '2 business days';
-            break;
-          case 'urgent':
-            responseTime = '24 hours';
-            break;
-          case 'emergency':
-            alert('For emergencies, please call us immediately at +1 5589 55488 55 or visit the nearest emergency room.');
-            return;
+    <!-- Contact Page JavaScript -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Form submission handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          // Get urgency level
+          const urgency = document.getElementById('contactUrgency').value;
+          let responseTime = '';
+          
+          switch(urgency) {
+            case 'routine':
+              responseTime = '2 business days';
+              break;
+            case 'urgent':
+              responseTime = '24 hours';
+              break;
+            case 'emergency':
+              alert('For emergencies, please call us immediately at +1 5589 55488 55 or visit the nearest emergency room.');
+              return;
+          }
+          
+          // Show success message
+          alert(`Thank you for your message! We have received your inquiry and will respond within ${responseTime}.`);
+          this.reset();
+        });
+  
+        // Emergency contact highlighting
+        const emergencyBtn = document.querySelector('.btn-danger');
+        if (emergencyBtn) {
+          emergencyBtn.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.05)';
+          });
+          emergencyBtn.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+          });
         }
-        
-        // Show success message
-        alert(`Thank you for your message! We have received your inquiry and will respond within ${responseTime}.`);
-        this.reset();
       });
-
-      // Emergency contact highlighting
-      const emergencyBtn = document.querySelector('.btn-danger');
-      emergencyBtn.addEventListener('mouseenter', function() {
-        this.style.transform = 'scale(1.05)';
-      });
-      emergencyBtn.addEventListener('mouseleave', function() {
-        this.style.transform = 'scale(1)';
-      });
+    </script>
+  
+  </body>
+  
+  </html>
