@@ -176,7 +176,20 @@
                 <h3 class="card-title text-center mb-0">Schedule Your Appointment</h3>
               </div>
               <div class="card-body p-5">
-                <form class="row g-4" id="appointmentBookingForm">
+                {% if messages %}
+                <div class="messages">
+                  {% for message in messages %}
+                  <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+                  {% endfor %}
+                </div>
+                {% endif %}
+
+                <form method="post" class="row g-4" id="appointmentBookingForm">
+                  {% csrf_token %}
+                  
                   <!-- Personal Information -->
                   <div class="col-12">
                     <h5 class="border-bottom pb-2 mb-4">Personal Information</h5>
@@ -184,12 +197,12 @@
                   
                   <div class="col-md-6">
                     <label for="firstName" class="form-label">First Name <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="firstName" name="firstName" required>
+                    <input type="text" class="form-control" id="firstName" name="first_name" required>
                   </div>
                   
                   <div class="col-md-6">
                     <label for="lastName" class="form-label">Last Name <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="lastName" name="lastName" required>
+                    <input type="text" class="form-control" id="lastName" name="last_name" required>
                   </div>
                   
                   <div class="col-md-6">
@@ -199,12 +212,12 @@
                   
                   <div class="col-md-6">
                     <label for="phone" class="form-label">Phone Number <span class="text-danger">*</span></label>
-                    <input type="tel" class="form-control" id="phone" name="phone" required>
+                    <input type="tel" class="form-control" id="phone" name="phone_number" required>
                   </div>
                   
                   <div class="col-md-6">
                     <label for="dateOfBirth" class="form-label">Date of Birth <span class="text-danger">*</span></label>
-                    <input type="date" class="form-control" id="dateOfBirth" name="dateOfBirth" required>
+                    <input type="date" class="form-control" id="dateOfBirth" name="date_of_birth" required>
                   </div>
                   
                   <div class="col-md-6">
@@ -240,7 +253,7 @@
                   
                   <div class="col-md-6">
                     <label for="doctor" class="form-label">Preferred Doctor</label>
-                    <select class="form-select" id="doctor" name="doctor">
+                    <select class="form-select" id="doctor" name="preferred_doctor">
                       <option value="">Any Available Doctor</option>
                       <option value="dr-johnson">Dr. Sarah Johnson (Cardiology)</option>
                       <option value="dr-chen">Dr. Michael Chen (Neurology)</option>
@@ -252,12 +265,12 @@
                   
                   <div class="col-md-6">
                     <label for="appointmentDate" class="form-label">Preferred Date <span class="text-danger">*</span></label>
-                    <input type="date" class="form-control" id="appointmentDate" name="appointmentDate" min="" required>
+                    <input type="date" class="form-control" id="appointmentDate" name="preferred_date" min="" required>
                   </div>
                   
                   <div class="col-md-6">
                     <label for="appointmentTime" class="form-label">Preferred Time <span class="text-danger">*</span></label>
-                    <select class="form-select" id="appointmentTime" name="appointmentTime" required>
+                    <select class="form-select" id="appointmentTime" name="preferred_time" required>
                       <option value="">Select Time Slot</option>
                       <option value="08:00">8:00 AM</option>
                       <option value="08:30">8:30 AM</option>
@@ -280,7 +293,7 @@
                   
                   <div class="col-12">
                     <label for="appointmentType" class="form-label">Appointment Type <span class="text-danger">*</span></label>
-                    <select class="form-select" id="appointmentType" name="appointmentType" required>
+                    <select class="form-select" id="appointmentType" name="appointment_type" required>
                       <option value="">Select Appointment Type</option>
                       <option value="consultation">New Patient Consultation</option>
                       <option value="follow-up">Follow-up Visit</option>
@@ -298,17 +311,17 @@
                   
                   <div class="col-12">
                     <label for="reason" class="form-label">Reason for Visit <span class="text-danger">*</span></label>
-                    <textarea class="form-control" id="reason" name="reason" rows="4" placeholder="Please describe your symptoms or reason for scheduling this appointment..." required></textarea>
+                    <textarea class="form-control" id="reason" name="reason_for_visit" rows="4" placeholder="Please describe your symptoms or reason for scheduling this appointment..." required></textarea>
                   </div>
                   
                   <div class="col-12">
                     <label for="symptoms" class="form-label">Current Symptoms</label>
-                    <textarea class="form-control" id="symptoms" name="symptoms" rows="3" placeholder="List any current symptoms you're experiencing..."></textarea>
+                    <textarea class="form-control" id="symptoms" name="current_symptoms" rows="3" placeholder="List any current symptoms you're experiencing..."></textarea>
                   </div>
                   
                   <div class="col-12">
                     <label for="medications" class="form-label">Current Medications</label>
-                    <textarea class="form-control" id="medications" name="medications" rows="2" placeholder="List any medications you're currently taking..."></textarea>
+                    <textarea class="form-control" id="medications" name="current_medications" rows="2" placeholder="List any medications you're currently taking..."></textarea>
                   </div>
 
                   <!-- Insurance Information -->
@@ -318,18 +331,18 @@
                   
                   <div class="col-md-6">
                     <label for="insuranceProvider" class="form-label">Insurance Provider</label>
-                    <input type="text" class="form-control" id="insuranceProvider" name="insuranceProvider" placeholder="e.g., Blue Cross Blue Shield">
+                    <input type="text" class="form-control" id="insuranceProvider" name="insurance_provider" placeholder="e.g., Blue Cross Blue Shield">
                   </div>
                   
                   <div class="col-md-6">
                     <label for="insuranceId" class="form-label">Insurance ID Number</label>
-                    <input type="text" class="form-control" id="insuranceId" name="insuranceId" placeholder="Your insurance member ID">
+                    <input type="text" class="form-control" id="insuranceId" name="insurance_id" placeholder="Your insurance member ID">
                   </div>
 
                   <!-- Terms and Submission -->
                   <div class="col-12 mt-4">
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="terms" name="terms" required>
+                      <input class="form-check-input" type="checkbox" id="terms" name="terms_accepted" required>
                       <label class="form-check-label" for="terms">
                         I agree to the <a href="privacy-policy.html" class="text-primary">Privacy Policy</a> and <a href="terms-of-service.html" class="text-primary">Terms of Service</a>. I understand that this appointment request is subject to confirmation by Medilab staff.
                       </label>
@@ -338,7 +351,7 @@
                   
                   <div class="col-12">
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="consent" name="consent" required>
+                      <input class="form-check-input" type="checkbox" id="consent" name="communication_consent" required>
                       <label class="form-check-label" for="consent">
                         I consent to receiving appointment reminders and healthcare communications via email and SMS.
                       </label>
@@ -609,18 +622,8 @@
       const today = new Date().toISOString().split('T')[0];
       document.getElementById('appointmentDate').min = today;
       
-      // Set minimum date for date of birth (assuming patients must be at least 1 year old)
-      const minDob = new Date();
-      minDob.setFullYear(minDob.getFullYear() - 120);
-      document.getElementById('dateOfBirth').max = new Date().toISOString().split('T')[0];
-      
-      // Form submission handler
-      document.getElementById('appointmentBookingForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        // Here you would typically send the form data to your server
-        alert('Thank you! Your appointment request has been submitted. We will contact you shortly to confirm your appointment.');
-        this.reset();
-      });
+      // Set maximum date for date of birth to today
+      document.getElementById('dateOfBirth').max = today;
     });
   </script>
 
