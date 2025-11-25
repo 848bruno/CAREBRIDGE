@@ -36,6 +36,74 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+  
+  <style>
+    /* Custom styles for billing page */
+    .billing-page .payment-icon {
+      transition: transform 0.3s ease;
+    }
+    
+    .billing-page .card:hover .payment-icon {
+      transform: scale(1.1);
+    }
+    
+    .billing-page .badge {
+      font-size: 0.75rem;
+    }
+    
+    .billing-page .table th {
+      border-top: none;
+      font-weight: 600;
+    }
+    
+    .billing-page .progress {
+      height: 8px;
+    }
+    
+    .billing-page .payment-method-toggle {
+      cursor: pointer;
+    }
+    
+    .billing-page .payment-summary-card {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      border-left: 4px solid #0d6efd;
+    }
+    
+    .billing-page .payment-option-card {
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+    
+    .billing-page .payment-option-card:hover {
+      border-color: #0d6efd;
+      transform: translateY(-5px);
+    }
+    
+    .billing-page .bill-status-pending {
+      background-color: #fff3cd;
+      color: #856404;
+    }
+    
+    .billing-page .bill-status-due {
+      background-color: #f8d7da;
+      color: #721c24;
+    }
+    
+    .billing-page .bill-status-paid {
+      background-color: #d1edff;
+      color: #0c5460;
+    }
+    
+    .billing-page .amount-due-highlight {
+      background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+      color: white;
+    }
+    
+    .billing-page .payment-security-badge {
+      background-color: #e7f3ff;
+      border: 1px solid #b3d9ff;
+    }
+  </style>
 </head>
 
 <body class="billing-page">
@@ -57,7 +125,7 @@
       </div>
     </div><!-- End Top Bar -->
 
-    <div class="branding d-flex align-items-center">
+     <div class="branding d-flex align-items-center">
 
       <div class="container position-relative d-flex align-items-center justify-content-between">
         <a href="index.html" class="logo d-flex align-items-center me-auto">
@@ -66,34 +134,34 @@
 
         <nav id="navmenu" class="navmenu">
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="departments.html">Departments</a></li>
-            <li><a href="doctors.html">Doctors</a></li>
+            <li><a href="{% url 'index'%}">Home</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'services' %}">Services</a></li>
+            <li><a href="{% url 'departments' %}">Departments</a></li>
+            <li><a href="{% url 'doctors' %}">Doctors</a></li>
             <li class="dropdown"><a href="#"><span>Resources</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
               <ul>
-                <li><a href="health-tips.html">Health Tips</a></li>
+                <li><a href="{% url 'healthTips' %}">Health Tips</a></li>
                 <li class="dropdown"><a href="#"><span>Patient Resources</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                   <ul>
-                    <li><a href="patient-forms.html">Patient Forms</a></li>
-                    <li><a href="insurance-info.html">Insurance Information</a></li>
-                    <li><a href="billing-payments.html" class="active">Billing & Payments</a></li>
-                    <li><a href="medical-records.html">Medical Records</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="{% url 'patientForms' %}">Patient Forms</a></li>
+                    <li><a href="{% url 'insuranceInfo' %}">Insurance Information</a></li>
+                    <li><a href="{% url 'billing' %}">Billing & Payments</a></li>
+                    <li><a href="{% url 'medicalRecords' %}">Medical Records</a></li>
+                    <li><a href="{% url 'faq' %}">FAQ</a></li>
                   </ul>
                 </li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="careers.html">Careers</a></li>
+                <li><a href="{% url 'blog' %}">Blog</a></li>
+                <li><a href="{% url 'event' %}">Events</a></li>
+                <li><a href="{% url 'careers' %}" class="active">Careers</a></li>
               </ul>
             </li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
 
-        <a class="cta-btn d-none d-sm-block" href="appointment.html">Make an Appointment</a>
+        <a class="cta-btn d-none d-sm-block" href="{% url 'appointment' %}">Make an Appointment</a>
 
       </div>
 
@@ -136,6 +204,7 @@
             <div class="d-flex flex-wrap gap-3">
               <a href="#current-bills" class="btn btn-primary btn-lg">View Current Bills</a>
               <a href="#payment-options" class="btn btn-outline-primary btn-lg">Payment Options</a>
+              <a href="#payment-plans" class="btn btn-outline-secondary btn-lg">Payment Plans</a>
             </div>
           </div>
           <div class="col-lg-6" data-aos="fade-left">
@@ -160,6 +229,52 @@
         </div>
       </div>
     </section><!-- End Billing Overview Section -->
+
+    <!-- Payment Summary Section -->
+    <section id="payment-summary" class="payment-summary section">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-4" data-aos="fade-up">
+            <div class="card payment-summary-card border-0 shadow-sm h-100">
+              <div class="card-body p-4">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                  <h5 class="card-title mb-0">Total Balance</h5>
+                  <i class="bi bi-wallet2 text-primary fs-4"></i>
+                </div>
+                <h2 class="text-primary fw-bold">$1,250.00</h2>
+                <p class="text-muted mb-0">All outstanding charges</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="card payment-summary-card border-0 shadow-sm h-100">
+              <div class="card-body p-4">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                  <h5 class="card-title mb-0">Due Now</h5>
+                  <i class="bi bi-clock text-warning fs-4"></i>
+                </div>
+                <h2 class="text-warning fw-bold">$850.00</h2>
+                <p class="text-muted mb-0">Due within 30 days</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="card amount-due-highlight border-0 shadow-sm h-100">
+              <div class="card-body p-4 text-white">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                  <h5 class="card-title mb-0">Next Payment Due</h5>
+                  <i class="bi bi-calendar-check fs-4"></i>
+                </div>
+                <h2 class="fw-bold">15 Days</h2>
+                <p class="mb-0">April 15, 2024</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Payment Summary Section -->
 
     <!-- Current Bills Section -->
     <section id="current-bills" class="current-bills section">
@@ -199,6 +314,16 @@
                   <span>Payment Due Date:</span>
                   <strong class="text-danger">15 Days</strong>
                 </div>
+                
+                <div class="mt-4">
+                  <div class="d-flex justify-content-between mb-1">
+                    <small>Payment Progress</small>
+                    <small>12%</small>
+                  </div>
+                  <div class="progress" style="height: 8px;">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 12%" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -206,8 +331,16 @@
           <!-- Bill Details -->
           <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
             <div class="card border-0 shadow-sm">
-              <div class="card-header bg-light">
+              <div class="card-header bg-light d-flex justify-content-between align-items-center">
                 <h5 class="card-title mb-0">Bill Details</h5>
+                <div class="d-flex gap-2">
+                  <button class="btn btn-sm btn-outline-primary">
+                    <i class="bi bi-download me-1"></i> Export
+                  </button>
+                  <button class="btn btn-sm btn-outline-primary">
+                    <i class="bi bi-printer me-1"></i> Print
+                  </button>
+                </div>
               </div>
               <div class="card-body p-0">
                 <div class="table-responsive">
@@ -230,7 +363,7 @@
                         <td>Dr. Sarah Johnson</td>
                         <td>BCBS</td>
                         <td>$250.00</td>
-                        <td><span class="badge bg-warning">Pending Insurance</span></td>
+                        <td><span class="badge bill-status-pending">Pending Insurance</span></td>
                         <td>
                           <button class="btn btn-sm btn-outline-primary">View Details</button>
                         </td>
@@ -241,7 +374,7 @@
                         <td>Medilab Laboratory</td>
                         <td>BCBS</td>
                         <td>$180.00</td>
-                        <td><span class="badge bg-warning">Pending Insurance</span></td>
+                        <td><span class="badge bill-status-pending">Pending Insurance</span></td>
                         <td>
                           <button class="btn btn-sm btn-outline-primary">View Details</button>
                         </td>
@@ -252,7 +385,7 @@
                         <td>Dr. Emily Rodriguez</td>
                         <td>Patient Responsibility</td>
                         <td>$150.00</td>
-                        <td><span class="badge bg-danger">Due Now</span></td>
+                        <td><span class="badge bill-status-due">Due Now</span></td>
                         <td>
                           <button class="btn btn-sm btn-primary">Pay Now</button>
                         </td>
@@ -263,7 +396,7 @@
                         <td>Radiology Dept</td>
                         <td>Patient Responsibility</td>
                         <td>$220.00</td>
-                        <td><span class="badge bg-danger">Due Now</span></td>
+                        <td><span class="badge bill-status-due">Due Now</span></td>
                         <td>
                           <button class="btn btn-sm btn-primary">Pay Now</button>
                         </td>
@@ -274,7 +407,7 @@
                         <td>Dr. Michael Chen</td>
                         <td>Paid</td>
                         <td>$300.00</td>
-                        <td><span class="badge bg-success">Paid</span></td>
+                        <td><span class="badge bill-status-paid">Paid</span></td>
                         <td>
                           <button class="btn btn-sm btn-outline-secondary">Receipt</button>
                         </td>
@@ -301,7 +434,7 @@
 
         <div class="row g-4">
           <div class="col-md-6 col-lg-4" data-aos="fade-up">
-            <div class="card border-0 shadow-sm h-100 text-center">
+            <div class="card payment-option-card border-0 shadow-sm h-100 text-center">
               <div class="card-body p-4">
                 <div class="payment-icon bg-primary text-white rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
                   <i class="bi bi-credit-card display-6"></i>
@@ -314,7 +447,7 @@
           </div>
 
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="card border-0 shadow-sm h-100 text-center">
+            <div class="card payment-option-card border-0 shadow-sm h-100 text-center">
               <div class="card-body p-4">
                 <div class="payment-icon bg-success text-white rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
                   <i class="bi bi-calendar-check display-6"></i>
@@ -327,7 +460,7 @@
           </div>
 
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="card border-0 shadow-sm h-100 text-center">
+            <div class="card payment-option-card border-0 shadow-sm h-100 text-center">
               <div class="card-body p-4">
                 <div class="payment-icon bg-info text-white rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
                   <i class="bi bi-building display-6"></i>
@@ -342,16 +475,107 @@
       </div>
     </section><!-- End Payment Options Section -->
 
+    <!-- Payment Plans Section -->
+    <section id="payment-plans" class="payment-plans section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12 text-center">
+            <h2 class="mb-3">Flexible Payment Plans</h2>
+            <p class="text-muted">Manage your healthcare expenses with our interest-free payment options</p>
+          </div>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+          <div class="col-lg-4 col-md-6" data-aos="fade-up">
+            <div class="card border-0 shadow-sm h-100 text-center">
+              <div class="card-header bg-primary text-white py-4">
+                <h5 class="card-title mb-0">Basic Plan</h5>
+              </div>
+              <div class="card-body p-4">
+                <h3 class="fw-bold text-primary">3 Months</h3>
+                <p class="text-muted">Interest-free installment plan</p>
+                <ul class="list-unstyled mb-4">
+                  <li class="mb-2"><i class="bi bi-check text-success me-2"></i>No credit check required</li>
+                  <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Fixed monthly payments</li>
+                  <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Easy online management</li>
+                </ul>
+                <div class="d-grid">
+                  <button class="btn btn-outline-primary">Select Plan</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="card border-0 shadow-lg h-100 text-center position-relative">
+              <div class="position-absolute top-0 start-50 translate-middle">
+                <span class="badge bg-warning text-dark px-3 py-2">Most Popular</span>
+              </div>
+              <div class="card-header bg-success text-white py-4">
+                <h5 class="card-title mb-0">Standard Plan</h5>
+              </div>
+              <div class="card-body p-4">
+                <h3 class="fw-bold text-success">6 Months</h3>
+                <p class="text-muted">Extended payment flexibility</p>
+                <ul class="list-unstyled mb-4">
+                  <li class="mb-2"><i class="bi bi-check text-success me-2"></i>All Basic Plan features</li>
+                  <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Lower monthly payments</li>
+                  <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Payment date flexibility</li>
+                  <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Auto-pay option available</li>
+                </ul>
+                <div class="d-grid">
+                  <button class="btn btn-success">Select Plan</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="card border-0 shadow-sm h-100 text-center">
+              <div class="card-header bg-info text-white py-4">
+                <h5 class="card-title mb-0">Extended Plan</h5>
+              </div>
+              <div class="card-body p-4">
+                <h3 class="fw-bold text-info">12 Months</h3>
+                <p class="text-muted">Maximum payment flexibility</p>
+                <ul class="list-unstyled mb-4">
+                  <li class="mb-2"><i class="bi bi-check text-success me-2"></i>All Standard Plan features</li>
+                  <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Smallest monthly payments</li>
+                  <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Payment deferral options</li>
+                  <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Financial counseling included</li>
+                </ul>
+                <div class="d-grid">
+                  <button class="btn btn-outline-primary">Select Plan</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Payment Plans Section -->
+
     <!-- Online Payment Section -->
-    <section id="online-payment" class="online-payment section">
+    <section id="online-payment" class="online-payment section bg-light">
       <div class="container">
         <div class="row justify-content-center">
-          <div class="col-lg-8">
+          <div class="col-lg-10">
             <div class="card border-0 shadow-lg">
               <div class="card-header bg-primary text-white py-4">
                 <h3 class="card-title text-center mb-0">Make an Online Payment</h3>
               </div>
               <div class="card-body p-5">
+                <div class="row mb-4">
+                  <div class="col-12">
+                    <div class="payment-security-badge rounded p-3 d-flex align-items-center">
+                      <i class="bi bi-shield-check text-primary fs-4 me-3"></i>
+                      <div>
+                        <h6 class="mb-0">Secure Payment</h6>
+                        <small class="text-muted">Your payment information is encrypted and secure</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
                 <form id="paymentForm">
                   <!-- Patient Information -->
                   <div class="row g-3 mb-4">
@@ -384,6 +608,7 @@
                         <button type="button" class="btn btn-outline-primary btn-sm" onclick="setAmount(100)">$100</button>
                         <button type="button" class="btn btn-outline-primary btn-sm" onclick="setAmount(250)">$250</button>
                         <button type="button" class="btn btn-outline-primary btn-sm" onclick="setAmount(500)">$500</button>
+                        <button type="button" class="btn btn-outline-primary btn-sm" onclick="setFullAmount()">Full Balance</button>
                       </div>
                     </div>
                   </div>
@@ -394,17 +619,28 @@
                       <h5 class="border-bottom pb-2">Payment Method</h5>
                     </div>
                     <div class="col-12">
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="paymentMethod" id="creditCard" checked>
-                        <label class="form-check-label" for="creditCard">
-                          Credit/Debit Card
-                        </label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="paymentMethod" id="bankTransfer">
-                        <label class="form-check-label" for="bankTransfer">
-                          Bank Transfer (ACH)
-                        </label>
+                      <div class="d-flex gap-3 flex-wrap">
+                        <div class="form-check payment-method-toggle">
+                          <input class="form-check-input" type="radio" name="paymentMethod" id="creditCard" checked>
+                          <label class="form-check-label border rounded p-3" for="creditCard">
+                            <i class="bi bi-credit-card-2-front fs-4 d-block mb-2"></i>
+                            Credit/Debit Card
+                          </label>
+                        </div>
+                        <div class="form-check payment-method-toggle">
+                          <input class="form-check-input" type="radio" name="paymentMethod" id="bankTransfer">
+                          <label class="form-check-label border rounded p-3" for="bankTransfer">
+                            <i class="bi bi-bank fs-4 d-block mb-2"></i>
+                            Bank Transfer (ACH)
+                          </label>
+                        </div>
+                        <div class="form-check payment-method-toggle">
+                          <input class="form-check-input" type="radio" name="paymentMethod" id="digitalWallet">
+                          <label class="form-check-label border rounded p-3" for="digitalWallet">
+                            <i class="bi bi-phone fs-4 d-block mb-2"></i>
+                            Digital Wallet
+                          </label>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -441,6 +677,26 @@
                       <div class="col-12">
                         <label for="accountNumberBank" class="form-label">Account Number <span class="text-danger">*</span></label>
                         <input type="text" class="form-control" id="accountNumberBank">
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Digital Wallet Details -->
+                  <div id="digitalWalletDetails" style="display: none;">
+                    <div class="row g-3 mb-4">
+                      <div class="col-12 text-center">
+                        <p class="text-muted">Select your preferred digital wallet</p>
+                        <div class="d-flex justify-content-center gap-3">
+                          <button type="button" class="btn btn-outline-dark">
+                            <i class="bi bi-paypal me-2"></i> PayPal
+                          </button>
+                          <button type="button" class="btn btn-outline-dark">
+                            <i class="bi bi-google me-2"></i> Google Pay
+                          </button>
+                          <button type="button" class="btn btn-outline-dark">
+                            <i class="bi bi-apple me-2"></i> Apple Pay
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -503,7 +759,7 @@
     </section><!-- End Online Payment Section -->
 
     <!-- Insurance Information Section -->
-    <section id="insurance-info" class="insurance-info section bg-light">
+    <section id="insurance-info" class="insurance-info section">
       <div class="container">
         <div class="row mb-5">
           <div class="col-12 text-center">
@@ -519,16 +775,24 @@
                 <h5 class="card-title mb-0">Accepted Insurance Plans</h5>
               </div>
               <div class="card-body">
-                <ul class="list-unstyled">
-                  <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Blue Cross Blue Shield</li>
-                  <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Aetna</li>
-                  <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Cigna</li>
-                  <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>UnitedHealthcare</li>
-                  <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Medicare</li>
-                  <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Medicaid</li>
-                  <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Humana</li>
-                  <li><i class="bi bi-check-circle-fill text-success me-2"></i>Many Regional Plans</li>
-                </ul>
+                <div class="row">
+                  <div class="col-md-6">
+                    <ul class="list-unstyled">
+                      <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Blue Cross Blue Shield</li>
+                      <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Aetna</li>
+                      <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Cigna</li>
+                      <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>UnitedHealthcare</li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6">
+                    <ul class="list-unstyled">
+                      <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Medicare</li>
+                      <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Medicaid</li>
+                      <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Humana</li>
+                      <li><i class="bi bi-check-circle-fill text-success me-2"></i>Many Regional Plans</li>
+                    </ul>
+                  </div>
+                </div>
                 <div class="alert alert-info mt-3">
                   <small>Insurance coverage may vary by plan. Please contact your insurance provider to verify benefits.</small>
                 </div>
@@ -586,7 +850,7 @@
     </section><!-- End Insurance Information Section -->
 
     <!-- FAQ Section -->
-    <section id="billing-faq" class="billing-faq section">
+    <section id="billing-faq" class="billing-faq section bg-light">
       <div class="container">
         <div class="row mb-5">
           <div class="col-12 text-center">
@@ -695,4 +959,92 @@
           <ul>
             <li><a href="cardiology.html">Cardiology</a></li>
             <li><a href="neurology.html">Neurology</a></li>
-            <li><a
+            <li><a href="orthopedics.html">Orthopedics</a></li>
+            <li><a href="pediatrics.html">Pediatrics</a></li>
+            <li><a href="radiology.html">Radiology</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-12 footer-newsletter">
+          <h4>Subscribe to Our Newsletter</h4>
+          <p>Stay updated with our latest health tips and news</p>
+          <form action="#" method="post" class="mt-3">
+            <input type="email" name="email" class="form-control" placeholder="Your email address" required>
+            <button type="submit" class="btn btn-primary mt-2">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom text-center">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Medilab</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top Button -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+
+  <!-- Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+  <!-- Billing Page Custom JS -->
+  <script>
+    // Function to set payment amount
+    function setAmount(amount) {
+      document.getElementById('paymentAmount').value = amount;
+    }
+    
+    // Function to set full balance amount
+    function setFullAmount() {
+      document.getElementById('paymentAmount').value = 1250.00;
+    }
+    
+    // Toggle payment method details
+    document.addEventListener('DOMContentLoaded', function() {
+      const paymentMethods = document.querySelectorAll('input[name="paymentMethod"]');
+      const creditCardDetails = document.getElementById('creditCardDetails');
+      const bankTransferDetails = document.getElementById('bankTransferDetails');
+      const digitalWalletDetails = document.getElementById('digitalWalletDetails');
+      
+      paymentMethods.forEach(method => {
+        method.addEventListener('change', function() {
+          // Hide all payment method details
+          creditCardDetails.style.display = 'none';
+          bankTransferDetails.style.display = 'none';
+          digitalWalletDetails.style.display = 'none';
+          
+          // Show selected payment method details
+          if (this.id === 'creditCard') {
+            creditCardDetails.style.display = 'block';
+          } else if (this.id === 'bankTransfer') {
+            bankTransferDetails.style.display = 'block';
+          } else if (this.id === 'digitalWallet') {
+            digitalWalletDetails.style.display = 'block';
+          }
+        });
+      });
+      
+      // Initialize with credit card selected
+      document.getElementById('creditCard').checked = true;
+      creditCardDetails.style.display = 'block';
+    });
+  </script>
+
+</body>
+
+</html>

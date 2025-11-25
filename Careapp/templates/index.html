@@ -79,16 +79,16 @@
                 <li><a href="#">Health Tips</a></li>
                 <li class="dropdown"><a href="#"><span>Patient Resources</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                   <ul>
-                    <li><a href="#">Patient Forms</a></li>
-                    <li><a href="#">Insurance Information</a></li>
-                    <li><a href="#">Billing & Payments</a></li>
-                    <li><a href="#">Medical Records</a></li>
-                    <li><a href="#">FAQ</a></li>
+                    <li><a href="{% url 'patientForms' %}">Patient Forms</a></li>
+                    <li><a href="{% url 'insuranceInfo' %}">Insurance Information</a></li>
+                    <li><a href="{% url 'billing' %}">Billing & Payments</a></li>
+                    <li><a href="{% url 'medicalRecords' %}">Medical Records</a></li>
+                    <li><a href="{% url 'faq' %}">FAQ</a></li>
                   </ul>
                 </li>
                 <li><a href="{% url 'blog' %}">Blog</a></li>
                 <li><a href="{% url 'event' %}">Events</a></li>
-                <li><a href="#">Careers</a></li>
+                <li><a href="{% url 'careers' %}">Careers</a></li>
               </ul>
             </li>
             <li><a href="{% url 'contact' %}">Contact</a></li>
@@ -96,7 +96,7 @@
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
 
-        <a class="cta-btn d-none d-sm-block" href="#appointment">Make an Appointment</a>
+        <a class="cta-btn d-none d-sm-block" href="{% url 'appointment' %}">Make an Appointment</a>
 
       </div>
 
