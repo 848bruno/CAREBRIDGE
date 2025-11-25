@@ -154,6 +154,17 @@ class Appointment(models.Model):
                                     timezone.datetime.strptime(self.preferred_time, '%H:%M').time())
         )   
 
+class Appoinment_index(models.Model):
+    name = models.CharField(max_length=20)
+    email = models.EmailField()
+    phone = models.CharField(max_length=15)
+    date = models.DateTimeField()
+    department = models.CharField(max_length=50)
+    doctor = models.CharField(max_length=50)
+    message = models.TextField()
+
+    def __str__(self):
+        return self.name    
 
 
 

@@ -1,12 +1,37 @@
 from django.shortcuts import render
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from Careapp.models import Appointment
+from Careapp.models import Appoinment_index, Appointment
 from datetime import datetime, date
 
 # Create your views here.
 def index(request):
-    return render(request, 'index.html')
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        phone = request.POST.get('phone')
+        date = request.POST.get('date')
+        department = request.POST.get('department')
+        doctor = request.POST.get('doctor')
+        message = request.POST.get('message')
+
+        appointment_index = Appoinment_index(
+            name=name,
+            email=email,
+            phone=phone,
+            date=date,
+            department=department,
+            doctor=doctor,
+            message=message
+        )
+        appointment_index.save()
+        messages.success(request, 'Your appointment request has been submitted successfully.')
+        return redirect('index')
+    else:
+        # GET request - just render the template
+        return render(request, 'index.html')
+    
+    
 
 def starter(request):
     return render(request, 'starter-page.html')
@@ -155,6 +180,8 @@ def medicalRecords(request):
 
 def patientForms(request):
     return render(request, 'patientForms.html')
+
+
 
 
 
