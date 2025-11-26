@@ -1,8 +1,10 @@
 {% extends 'index.html' %}
-{% load static%} 
-{% block content %} 
-<title> List of appointments</title>
-<h2> List of Appointments </h2>
+{% load static %}
+
+{% block content %}
+
+<h2>List of Appointments</h2>
+
 <table border="1">
     <tr>
         <th>First Name</th>
@@ -13,6 +15,7 @@
         <th>Preferred Time</th>
         <th>Message</th>
     </tr>
+
     {% for appointment in appointments %}
     <tr>
         <td>{{ appointment.first_name }}</td>
@@ -23,7 +26,12 @@
         <td>{{ appointment.preferred_time }}</td>
         <td>{{ appointment.message }}</td>
     </tr>
-    {% endfor %}    
+    {% empty %}
+    <tr>
+        <td colspan="7">No appointments found.</td>
+    </tr>
+    {% endfor %}
+
 </table>
 
 {% endblock %}

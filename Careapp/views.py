@@ -24,9 +24,15 @@ def index(request):
         messages.success(request, 'Your appointment request has been submitted successfully.')
         return redirect('/')
     else:
-        # GET request - just render the template
-        return render(request, 'index.html')
-    
+         # GET request → fetch all appointments from database
+        appointments = Appoinment_index.objects.all().order_by('-id')
+
+    # pass data to HTML
+    context = {
+        'appointments': appointments
+    }
+    return render(request, 'index.html', context)
+      
     
 
 def starter(request):
