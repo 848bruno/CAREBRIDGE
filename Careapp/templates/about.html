@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>About Medilab - Leading Healthcare Excellence</title>
+  <title>{% block title %} About Medilab - Leading Healthcare Excellence {% endblock %}</title>
   <meta name="description" content="Learn about Medilab's mission, values, and commitment to providing exceptional healthcare services with cutting-edge technology and compassionate care.">
   <meta name="keywords" content="about medilab, healthcare mission, medical excellence, patient care, medical team">
   {% load static %}
@@ -101,6 +101,8 @@
 
   </header>
 
+  {% block content %}
+
   <main class="main">
 
     <!-- Page Title -->
@@ -123,8 +125,7 @@
           </ol>
         </div>
       </nav>
-    </div><!-- End Page Title -->
-
+    </div><!-- End Page Title --> 
     <!-- About Hero Section -->
     <section id="about-hero" class="about-hero section">
       <div class="container">
@@ -334,6 +335,8 @@
       </div>
     </section><!-- End Values Section -->
 
+  
+
     <!-- Leadership Team Section -->
     <section id="leadership" class="leadership section bg-light">
       <div class="container">
@@ -434,6 +437,7 @@
         </div>
       </div>
     </section><!-- End Accreditations Section -->
+ 
 
     <!-- CTA Section -->
     <section id="about-cta" class="about-cta section bg-primary text-white">
@@ -452,6 +456,9 @@
     </section><!-- End CTA Section -->
 
   </main>
+  {% endblock %}
+
+  
 
   <footer id="footer" class="footer light-background">
 

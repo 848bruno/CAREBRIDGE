@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Contact Medilab - Get in Touch with Healthcare Professionals</title>
+  <title> {% block title %}Contact Medilab - Get in Touch with Healthcare Professionals{% endblock %}</title>
   <meta name="description" content="Contact Medilab for appointments, medical inquiries, or general questions. Reach our healthcare team through multiple convenient channels.">
   <meta name="keywords" content="contact medilab, healthcare contact, medical inquiries, appointment scheduling, patient support">
   {% load static %}
@@ -37,6 +37,12 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 </head>
+
+ {% for message in messages %}
+
+   <p class="alert alert-success"> {{message}}</p>
+
+    {% endfor %}
 
 <body class="contact-page">
 
@@ -231,6 +237,8 @@
         </div>
       </div>
     </section><!-- End Contact Methods Section -->
+
+   
 
     <!-- Contact Form Section -->
     <section id="contact-form" class="contact-form section bg-light">

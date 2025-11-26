@@ -1,0 +1,29 @@
+{% extends 'index.html' %}
+{% load static%} 
+{% block content %} 
+<title> List of appointments</title>
+<h2> List of Appointments </h2>
+<table border="1">
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+        <th>Preferred Date</th>
+        <th>Preferred Time</th>
+        <th>Message</th>
+    </tr>
+    {% for appointment in appointments %}
+    <tr>
+        <td>{{ appointment.first_name }}</td>
+        <td>{{ appointment.last_name }}</td>
+        <td>{{ appointment.email }}</td>
+        <td>{{ appointment.phone_number }}</td>
+        <td>{{ appointment.preferred_date }}</td>
+        <td>{{ appointment.preferred_time }}</td>
+        <td>{{ appointment.message }}</td>
+    </tr>
+    {% endfor %}    
+</table>
+
+{% endblock %}

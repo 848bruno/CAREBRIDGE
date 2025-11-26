@@ -23,6 +23,7 @@ urlpatterns = [
     path('insuranceInfo/', views.insuranceInfo, name='insuranceInfo'),
     path('medicalRecords/', views.medicalRecords, name='medicalRecords'),
     path('patientForms/', views.patientForms, name='patientForms'),
+    path('show/', views.show, name='show')
 
 
    

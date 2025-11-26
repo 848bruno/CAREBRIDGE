@@ -1,0 +1,109 @@
+{% extends 'about.html'%}
+
+{% load static %}
+
+{% block title %} Doctors - Medilab {% endblock %}
+
+{% block content %}
+  <!-- Leadership Team Section -->
+    <section id="leadership" class="leadership section bg-light">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12 text-center">
+            <h2 class="mb-3">Our Leadership Team</h2>
+            <p class="text-muted">Experienced professionals guiding Medilab's vision</p>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3" data-aos="zoom-in">
+            <div class="card border-0 shadow-sm">
+              <img src="{% static 'assets/img/doctors/doctors-1.jpg' %}" class="card-img-top" alt="Dr. Robert Mitchell" style="height: 300px; object-fit: cover;">
+              <div class="card-body text-center">
+                <h5 class="card-title mb-1">Dr. Robert Mitchell</h5>
+                <p class="card-text text-muted small">Founder & Chief Medical Officer</p>
+                <p class="card-text small">Board-certified surgeon with 25+ years of experience in healthcare leadership.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+            <div class="card border-0 shadow-sm">
+              <img src="{% static 'assets/img/doctors/doctors-2.jpg' %}" class="card-img-top" alt="Dr. Sarah Johnson" style="height: 300px; object-fit: cover;">
+              <div class="card-body text-center">
+                <h5 class="card-title mb-1">Dr. Sarah Johnson</h5>
+                <p class="card-text text-muted small">Medical Director</p>
+                <p class="card-text small">Leading cardiologist with expertise in healthcare administration and quality improvement.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
+            <div class="card border-0 shadow-sm">
+              <img src="{% static 'assets/img/doctors/doctors-3.jpg' %}" class="card-img-top" alt="Michael Chen" style="height: 300px; object-fit: cover;">
+              <div class="card-body text-center">
+                <h5 class="card-title mb-1">Michael Chen</h5>
+                <p class="card-text text-muted small">Chief Operating Officer</p>
+                <p class="card-text small">Healthcare management expert with 15+ years in medical facility operations.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
+            <div class="card border-0 shadow-sm">
+              <img src="{% static 'assets/img/doctors/doctors-4.jpg' %}" class="card-img-top" alt="Dr. Emily Rodriguez" style="height: 300px; object-fit: cover;">
+              <div class="card-body text-center">
+                <h5 class="card-title mb-1">Dr. Emily Rodriguez</h5>
+                <p class="card-text text-muted small">Director of Patient Services</p>
+                <p class="card-text small">Dedicated to enhancing patient experience and ensuring quality care delivery.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Leadership Team Section -->
+
+    <!-- Accreditations Section -->
+    <section id="accreditations" class="accreditations section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12 text-center">
+            <h2 class="mb-3">Accreditations & Awards</h2>
+            <p class="text-muted">Recognized for excellence in healthcare</p>
+          </div>
+        </div>
+
+        <div class="row g-4 align-items-center">
+          <div class="col-md-3 col-6" data-aos="fade-up">
+            <div class="text-center">
+              <img src="{% static 'assets/img/about/accreditation-1.png' %}" alt="Joint Commission" class="img-fluid mb-3" style="height: 80px; object-fit: contain;">
+              <h6 class="mb-1">Joint Commission</h6>
+              <p class="small text-muted">Gold Seal of Approval</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="text-center">
+              <img src="{% static 'assets/img/about/accreditation-2.png' %}" alt="Healthcare Excellence" class="img-fluid mb-3" style="height: 80px; object-fit: contain;">
+              <h6 class="mb-1">Healthcare Excellence</h6>
+              <p class="small text-muted">Award 2023</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="text-center">
+              <img src="{% static 'assets/img/about/accreditation-3.png' %}" alt="Patient Safety" class="img-fluid mb-3" style="height: 80px; object-fit: contain;">
+              <h6 class="mb-1">Patient Safety</h6>
+              <p class="small text-muted">Quality Award</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="text-center">
+              <img src="{% static 'assets/img/about/accreditation-4.png' %}" alt="Medical Innovation" class="img-fluid mb-3" style="height: 80px; object-fit: contain;">
+              <h6 class="mb-1">Medical Innovation</h6>
+              <p class="small text-muted">Excellence Award</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Accreditations Section -->
+
+{% endblock %}

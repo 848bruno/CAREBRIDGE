@@ -7,26 +7,22 @@ from datetime import datetime, date
 # Create your views here.
 def index(request):
     if request.method == 'POST':
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        phone = request.POST.get('phone')
-        date = request.POST.get('date')
-        department = request.POST.get('department')
-        doctor = request.POST.get('doctor')
-        message = request.POST.get('message')
-
         appointment_index = Appoinment_index(
-            name=name,
-            email=email,
-            phone=phone,
-            date=date,
-            department=department,
-            doctor=doctor,
-            message=message
+
+            name = request.POST['name'],
+            email = request.POST['email'],
+            phone = request.POST['phone'],
+            date = request.POST['date'],
+            department = request.POST['department'],
+            doctor = request.POST['doctor'],
+            message = request.POST['message'],
+
         )
+
+       
         appointment_index.save()
         messages.success(request, 'Your appointment request has been submitted successfully.')
-        return redirect('index')
+        return redirect('/')
     else:
         # GET request - just render the template
         return render(request, 'index.html')
@@ -196,6 +192,11 @@ def medicalRecords(request):
 
 def patientForms(request):
     return render(request, 'patientForms.html')
+
+def show(request):
+
+
+    return render(request, 'show.html')
 
 
 

@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Medilab - Quality Healthcare Services</title>
+  <title>{% block title %}Medilab - Quality Healthcare Services{% endblock %}</title>
   <meta name="description" content="Medilab provides comprehensive healthcare services with state-of-the-art facilities and experienced medical professionals.">
   <meta name="keywords" content="healthcare, medical services, hospital, doctors, appointment">
   {% load static %}
@@ -38,6 +38,11 @@
   ======================================================== -->
 
 </head>
+{% for message in messages %}
+
+  <p class="alert alert-success"> {{message}}</p>
+
+   {% endfor %}
 
 <body class="index-page">
 
@@ -103,6 +108,7 @@
     </div>
 
   </header>
+  {% block content %}
 
   <main class="main">
 
@@ -366,7 +372,7 @@
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-        <form  method="post" action="{% url 'index'%}" role="form" class="php-email-form">
+        <form  method="post"   >
           {% csrf_token %}
           <div class="row">
             <div class="col-md-4 form-group">
@@ -1002,6 +1008,8 @@
     </section><!-- /Contact Section -->
 
   </main>
+  {% endblock %}
+
 
   <footer id="footer" class="footer light-background">
 
@@ -1078,7 +1086,7 @@
         Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
       </div>
     </div>
-
+    
   </footer>
 
   <!-- Scroll Top -->
