@@ -242,7 +242,8 @@
                 <h3 class="card-title text-center mb-0">Send Us a Message</h3>
               </div>
               <div class="card-body p-5">
-                <form class="row g-4" id="contactForm">
+                <form class="row g-4" method="post" id="contactForm" >
+                  {% csrf_token %}
                   <!-- Personal Information -->
                   <div class="col-12">
                     <h5 class="border-bottom pb-2 mb-4">Your Information</h5>
@@ -683,7 +684,7 @@
   <script src="{% static 'assets/js/main.js' %}"></script>
 
     <!-- Contact Page JavaScript -->
-    <script>
+    <!-- <script>
       document.addEventListener('DOMContentLoaded', function() {
         // Form submission handler
         document.getElementById('contactForm').addEventListener('submit', function(e) {
@@ -721,7 +722,7 @@
           });
         }
       });
-    </script>
+    </script> -->
   
   </body>
   

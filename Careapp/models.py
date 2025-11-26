@@ -164,7 +164,20 @@ class Appoinment_index(models.Model):
     message = models.TextField()
 
     def __str__(self):
-        return self.name    
+        return self.name  
+
+
+class Contact(models.Model):
+   contactFirstName = models.CharField(max_length=20)
+   contactLastName = models.CharField(max_length=20)
+   contactEmail = models.EmailField()
+   contactPhone = models.CharField(max_length=15)
+   contactMessage = models.TextField()
+   contactDepartment = models.CharField(max_length=50)
+   contactSubject = models.CharField(max_length=100)
+def __str__(self):
+       return self.contactFirstName
+
 
 
 

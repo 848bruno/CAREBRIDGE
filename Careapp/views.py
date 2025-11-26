@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from Careapp.models import Appoinment_index, Appointment
+from Careapp.models import Appoinment_index, Appointment,Contact
 from datetime import datetime, date
 
 # Create your views here.
@@ -52,7 +52,23 @@ def careers(request):
     return render(request, 'careers.html')
 
 def contact(request):
-    return render(request, 'contact.html')  
+    if request.method == 'POST':
+        contact_entry = Contact(
+             contactFirstName = request.POST['contactFirstName'],
+            contactLastName = request.POST['contactLastName'],
+            contactEmail = request.POST['contactEmail'],
+            contactPhone = request.POST['contactPhone'],
+            contactMessage = request.POST['contactMessage'],
+            contactDepartment = request.POST['contactDepartment'],
+            contactSubject = request.POST['contactSubject'],
+        )
+
+           
+        contact_entry.save()
+        messages.success(request, 'Your message has been sent successfully.')
+        return redirect('/contact')
+    else:
+        return render(request, 'contact.html')  
 
 
 def appointment(request):
