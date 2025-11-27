@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect,get_object_or_404
 from django.contrib import messages
 from Careapp.models import Appoinment_index, Appointment,Contact
 from datetime import datetime, date
@@ -202,6 +202,34 @@ def show(request):
     }
 
     return render(request, 'show.html', context)
+
+
+def edit(request, id):
+           
+        
+       editappointment=get_object_or_404(Appoinment_index, id=id)
+
+       if request.method == 'POST':
+            editappointment.name = request.POST.get('name')
+            editappointment.email = request.POST.get('email')
+            editappointment.phone = request.POST.get('phone')
+            editappointment.date = request.POST.get('date')
+            editappointment.department = request.POST.get('department')
+            editappointment.doctor = request.POST.get('doctor')
+            editappointment.message = request.POST.get('message')
+
+            editappointment.save()
+            messages.success(request, 'Your appointment has been updated successfully.')
+            return redirect('/show')
+       else:
+            context = {
+                'editappointment': editappointment
+            }
+            return render(request, 'edit.html', context)    
+
+
+    
+
 
 
 

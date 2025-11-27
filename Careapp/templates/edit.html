@@ -1,0 +1,57 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block title %}Edit Appointment{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-4 text-primary">Edit Appointment</h2>
+
+    <form method="POST" action="" class="card p-4 shadow-sm">
+        {% csrf_token %}
+
+        <div class="mb-3">
+            <label for="name"  class="form-label">Name</label>
+            <input type="text" id="name" name="name" class="form-control"
+                   value="{{ editappointment.name }}">
+        </div>
+
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" name="email" class="form-control"
+                   value="{{ editappointment.email }}">
+        </div>
+
+        <div class="mb-3">
+            <label for="phone" class="form-label">Phone</label>
+            <input type="text" id="phone" name="phone" class="form-control"
+                   value="{{ editappointment.phone }}">
+        </div>
+
+        <div class="mb-3">
+            <label for="date" class="form-label">Date</label>
+            <input type="date" id="date" name="date" class="form-control"
+                   value="{{ editappointment.datetime|date:'m-d-Y\\TH:i' }}">
+        </div>
+
+        <div class="mb-3">
+            <label for="department" class="form-label">Department</label>
+            <input type="text" id="department" name="department" class="form-control"
+                   value="{{ editappointment.department }}">
+        </div>
+
+        <div class="mb-3">
+            <label for="doctor" class="form-label">Doctor</label>
+            <input type="text" id="doctor" name="doctor" class="form-control"
+                   value="{{ editappointment.doctor }}">
+        </div>
+
+        <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea id="message" name="message" class="form-control" rows="4">{{ appointment.message }}</textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">Update Appointment</button>
+    </form>
+</div>
+{% endblock %}

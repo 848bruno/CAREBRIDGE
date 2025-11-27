@@ -3,7 +3,7 @@ from django.contrib import admin
 from django.urls import path
 from Careapp import views
 
-urlpatterns = [
+urlpatterns =[
     path('admin/', admin.site.urls),
 
     path('', views.index, name='index'),
@@ -23,8 +23,8 @@ urlpatterns = [
     path('insuranceInfo/', views.insuranceInfo, name='insuranceInfo'),
     path('medicalRecords/', views.medicalRecords, name='medicalRecords'),
     path('patientForms/', views.patientForms, name='patientForms'),
-    path('show/', views.show, name='show')
+    path('show/', views.show, name='show'),
+    path('edit/<int:id>/', views.edit, name='edit'),
 
-
-   
 ]
+    
