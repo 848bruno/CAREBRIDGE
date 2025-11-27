@@ -24,15 +24,9 @@ def index(request):
         messages.success(request, 'Your appointment request has been submitted successfully.')
         return redirect('/')
     else:
-         # GET request → fetch all appointments from database
-        appointments = Appoinment_index.objects.all().order_by('-id')
-
-    # pass data to HTML
-    context = {
-        'appointments': appointments
-    }
-    return render(request, 'index.html', context)
-      
+        # GET request - just render the template
+        return render(request, 'index.html')
+    
     
 
 def starter(request):
@@ -200,9 +194,16 @@ def patientForms(request):
     return render(request, 'patientForms.html')
 
 def show(request):
+    appointment_index = Appoinment_index.objects.all().order_by('-id')
+
+    # Send the data to the template
+    context = {
+        'appointment_index': appointment_index
+    }
+
+    return render(request, 'show.html', context)
 
 
-    return render(request, 'show.html')
 
 
 
