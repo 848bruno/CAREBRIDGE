@@ -3,7 +3,7 @@
 
 {% block content %}
 
-<div class="container mt-5">
+<div class="container mt-5 w-100">
     <h2 class="mb-4 text-primary">List of Appointments</h2>
 
     <div class="card shadow-sm">
@@ -38,7 +38,7 @@
                                     <a href="/edit/{{ appointment.id }}/" 
                                        class="btn btn-sm btn-warning">Edit</a>
                                        
-                                    <a href="#" 
+                                    <a href="/delete/{{ appointment.id }}/" 
                                        class="btn btn-sm btn-danger"
                                        onclick="return confirm('Are you sure you want to delete this appointment?');">
                                        Delete

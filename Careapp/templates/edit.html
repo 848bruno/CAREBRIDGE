@@ -30,8 +30,8 @@
 
         <div class="mb-3">
             <label for="date" class="form-label">Date</label>
-            <input type="date" id="date" name="date" class="form-control"
-                   value="{{ editappointment.datetime|date:'m-d-Y\\TH:i' }}">
+            <input type="datetime-local" id="date" name="date" class="form-control"
+                   value="{{editappointment.date | date:'Y-m-d\\TH:i'}}">
         </div>
 
         <div class="mb-3">
@@ -48,7 +48,7 @@
 
         <div class="mb-3">
             <label for="message" class="form-label">Message</label>
-            <textarea id="message" name="message" class="form-control" rows="4">{{ appointment.message }}</textarea>
+            <textarea id="message" name="message" class="form-control" rows="4">{{ editappointment.message }}</textarea>
         </div>
 
         <button type="submit" class="btn btn-primary w-100">Update Appointment</button>

@@ -225,7 +225,17 @@ def edit(request, id):
             context = {
                 'editappointment': editappointment
             }
-            return render(request, 'edit.html', context)    
+            return render(request, 'edit.html', context)   
+
+def delete(request, id):
+        
+        myappoint= Appoinment_index.objects.get(id = id)
+        myappoint.delete()
+        messages.success(request, 'Appointment deleted successfully.')
+        return redirect('/show')
+
+def register(request):
+    return render(request, 'register.html')
 
 
     
