@@ -108,7 +108,7 @@
     </div>
 
   </header>
-  {% block content %}
+  
 
   <main class="main">
 
@@ -121,6 +121,12 @@
 
         <div class="welcome position-relative" data-aos="fade-down" data-aos-delay="100">
           <h2>WELCOME TO MEDILAB</h2>
+          {% block content %}
+  {%if user.is_authenticated%}
+
+  {{uer.username}}
+
+  {% endif %}
           <p>Your trusted partner in comprehensive healthcare with a commitment to excellence and patient-centered care.</p>
         </div><!-- End Welcome -->
 
